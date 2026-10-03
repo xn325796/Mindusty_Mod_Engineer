@@ -1,0 +1,7936 @@
+{
+  "generated": "2026-10-02T09:38:50.098043600Z",
+  "source": "C:/Users/XN325/Desktop/mindustry/Mindustry-160.5/core/src/mindustry",
+  "note": "Draft from source scan. schemas/schema.json overrides these entries.",
+  "classes": {
+    "ItemUnitStance": {
+      "extends": "UnitStance",
+      "ctype": "unitStance",
+      "file": "C:/Users/XN325/Desktop/mindustry/Mindustry-160.5/core/src/mindustry/ai/ItemUnitStance.java",
+      "fields": []
+    },
+    "UnitCommand": {
+      "extends": "MappableContent",
+      "ctype": "unitCommand",
+      "file": "C:/Users/XN325/Desktop/mindustry/Mindustry-160.5/core/src/mindustry/ai/UnitCommand.java",
+      "fields": [
+        {
+          "n": "switchToMove",
+          "t": "bool"
+        },
+        {
+          "n": "drawTarget",
+          "t": "bool"
+        },
+        {
+          "n": "resetTarget",
+          "t": "bool"
+        },
+        {
+          "n": "snapToBuilding",
+          "t": "bool"
+        },
+        {
+          "n": "exactArrival",
+          "t": "bool"
+        },
+        {
+          "n": "refreshOnSelect",
+          "t": "bool"
+        },
+        {
+          "n": "keybind",
+          "t": "raw"
+        }
+      ]
+    },
+    "UnitStance": {
+      "extends": "MappableContent",
+      "ctype": "unitStance",
+      "file": "C:/Users/XN325/Desktop/mindustry/Mindustry-160.5/core/src/mindustry/ai/UnitStance.java",
+      "fields": [
+        {
+          "n": "icon",
+          "t": "text"
+        },
+        {
+          "n": "keybind",
+          "t": "raw"
+        },
+        {
+          "n": "toggle",
+          "t": "bool"
+        }
+      ]
+    },
+    "ArtilleryBulletType": {
+      "extends": "BasicBulletType",
+      "ctype": "bullet",
+      "file": "C:/Users/XN325/Desktop/mindustry/Mindustry-160.5/core/src/mindustry/entities/bullet/ArtilleryBulletType.java",
+      "fields": [
+        {
+          "n": "trailMult",
+          "t": "number"
+        }
+      ]
+    },
+    "BasicBulletType": {
+      "extends": "BulletType",
+      "ctype": "bullet",
+      "file": "C:/Users/XN325/Desktop/mindustry/Mindustry-160.5/core/src/mindustry/entities/bullet/BasicBulletType.java",
+      "fields": [
+        {
+          "n": "backColor",
+          "t": "color"
+        },
+        {
+          "n": "width",
+          "t": "number"
+        },
+        {
+          "n": "shrinkX",
+          "t": "number"
+        },
+        {
+          "n": "shrinkInterp",
+          "t": "raw"
+        },
+        {
+          "n": "spin",
+          "t": "number"
+        },
+        {
+          "n": "sprite",
+          "t": "text"
+        },
+        {
+          "n": "backSprite",
+          "t": "text"
+        },
+        {
+          "n": "backRegion",
+          "t": "raw"
+        },
+        {
+          "n": "frontRegion",
+          "t": "raw"
+        }
+      ]
+    },
+    "BombBulletType": {
+      "extends": "BasicBulletType",
+      "ctype": "bullet",
+      "file": "C:/Users/XN325/Desktop/mindustry/Mindustry-160.5/core/src/mindustry/entities/bullet/BombBulletType.java",
+      "fields": []
+    },
+    "BulletType": {
+      "extends": "Content",
+      "ctype": "bullet",
+      "file": "C:/Users/XN325/Desktop/mindustry/Mindustry-160.5/core/src/mindustry/entities/bullet/BulletType.java",
+      "fields": [
+        {
+          "n": "lifetime",
+          "t": "number"
+        },
+        {
+          "n": "lifeScaleRandMin",
+          "t": "number"
+        },
+        {
+          "n": "speed",
+          "t": "number"
+        },
+        {
+          "n": "velocityScaleRandMin",
+          "t": "number"
+        },
+        {
+          "n": "damage",
+          "t": "number"
+        },
+        {
+          "n": "hitSize",
+          "t": "number"
+        },
+        {
+          "n": "drawSize",
+          "t": "number"
+        },
+        {
+          "n": "angleOffset",
+          "t": "number"
+        },
+        {
+          "n": "drag",
+          "t": "number"
+        },
+        {
+          "n": "accel",
+          "t": "number"
+        },
+        {
+          "n": "pierce",
+          "t": "bool"
+        },
+        {
+          "n": "pierceBuilding",
+          "t": "bool"
+        },
+        {
+          "n": "pierceCap",
+          "t": "number"
+        },
+        {
+          "n": "pierceDamageFactor",
+          "t": "number"
+        },
+        {
+          "n": "maxDamageFraction",
+          "t": "number"
+        },
+        {
+          "n": "removeAfterPierce",
+          "t": "bool"
+        },
+        {
+          "n": "laserAbsorb",
+          "t": "bool"
+        },
+        {
+          "n": "laserBullet",
+          "t": "bool"
+        },
+        {
+          "n": "optimalLifeFract",
+          "t": "number"
+        },
+        {
+          "n": "layer",
+          "t": "number"
+        },
+        {
+          "n": "hitEffect",
+          "t": "raw"
+        },
+        {
+          "n": "despawnEffect",
+          "t": "raw"
+        },
+        {
+          "n": "shootEffect",
+          "t": "raw"
+        },
+        {
+          "n": "shootPattern",
+          "t": "raw"
+        },
+        {
+          "n": "chargeEffect",
+          "t": "raw"
+        },
+        {
+          "n": "smokeEffect",
+          "t": "raw"
+        },
+        {
+          "n": "shootSound",
+          "t": "raw"
+        },
+        {
+          "n": "hitSound",
+          "t": "raw"
+        },
+        {
+          "n": "despawnSound",
+          "t": "raw"
+        },
+        {
+          "n": "hitSoundPitch",
+          "t": "number"
+        },
+        {
+          "n": "hitSoundVolume",
+          "t": "number"
+        },
+        {
+          "n": "inaccuracy",
+          "t": "number"
+        },
+        {
+          "n": "ammoMultiplier",
+          "t": "number"
+        },
+        {
+          "n": "reloadMultiplier",
+          "t": "number"
+        },
+        {
+          "n": "buildingDamageMultiplier",
+          "t": "number"
+        },
+        {
+          "n": "shieldDamageMultiplier",
+          "t": "number"
+        },
+        {
+          "n": "recoil",
+          "t": "number"
+        },
+        {
+          "n": "killShooter",
+          "t": "bool"
+        },
+        {
+          "n": "instantDisappear",
+          "t": "bool"
+        },
+        {
+          "n": "splashDamage",
+          "t": "number"
+        },
+        {
+          "n": "scaledSplashDamage",
+          "t": "bool"
+        },
+        {
+          "n": "knockback",
+          "t": "number"
+        },
+        {
+          "n": "impact",
+          "t": "bool"
+        },
+        {
+          "n": "status",
+          "t": "content"
+        },
+        {
+          "n": "statusDuration",
+          "t": "number"
+        },
+        {
+          "n": "unitSort",
+          "t": "raw"
+        },
+        {
+          "n": "statusChance",
+          "t": "number"
+        },
+        {
+          "n": "targetBlocks",
+          "t": "bool"
+        },
+        {
+          "n": "targetMissiles",
+          "t": "bool"
+        },
+        {
+          "n": "collidesTiles",
+          "t": "bool"
+        },
+        {
+          "n": "collidesTeam",
+          "t": "bool"
+        },
+        {
+          "n": "collidesAir",
+          "t": "bool"
+        },
+        {
+          "n": "collides",
+          "t": "bool"
+        },
+        {
+          "n": "collideFloor",
+          "t": "bool"
+        },
+        {
+          "n": "collideTerrain",
+          "t": "bool"
+        },
+        {
+          "n": "keepVelocity",
+          "t": "bool"
+        },
+        {
+          "n": "scaleKeepVelocity",
+          "t": "bool"
+        },
+        {
+          "n": "scaleLife",
+          "t": "bool"
+        },
+        {
+          "n": "hittable",
+          "t": "bool"
+        },
+        {
+          "n": "reflectable",
+          "t": "bool"
+        },
+        {
+          "n": "absorbable",
+          "t": "bool"
+        },
+        {
+          "n": "ignoreSpawnAngle",
+          "t": "bool"
+        },
+        {
+          "n": "createChance",
+          "t": "number"
+        },
+        {
+          "n": "maxRange",
+          "t": "number"
+        },
+        {
+          "n": "rangeOverride",
+          "t": "number"
+        },
+        {
+          "n": "rangeChange",
+          "t": "number"
+        },
+        {
+          "n": "extraRangeMargin",
+          "t": "number"
+        },
+        {
+          "n": "range",
+          "t": "number"
+        },
+        {
+          "n": "minRangeChange",
+          "t": "number"
+        },
+        {
+          "n": "healPercent",
+          "t": "number"
+        },
+        {
+          "n": "healAmount",
+          "t": "number"
+        },
+        {
+          "n": "healSound",
+          "t": "raw"
+        },
+        {
+          "n": "healSoundVolume",
+          "t": "number"
+        },
+        {
+          "n": "lifesteal",
+          "t": "number"
+        },
+        {
+          "n": "makeFire",
+          "t": "bool"
+        },
+        {
+          "n": "hitUnder",
+          "t": "bool"
+        },
+        {
+          "n": "despawnHit",
+          "t": "bool"
+        },
+        {
+          "n": "fragOnHit",
+          "t": "bool"
+        },
+        {
+          "n": "fragOnDespawn",
+          "t": "bool"
+        },
+        {
+          "n": "fragOnAbsorb",
+          "t": "bool"
+        },
+        {
+          "n": "pierceArmor",
+          "t": "bool"
+        },
+        {
+          "n": "armorMultiplier",
+          "t": "number"
+        },
+        {
+          "n": "blockArmorMultiplier",
+          "t": "number"
+        },
+        {
+          "n": "sticky",
+          "t": "bool"
+        },
+        {
+          "n": "stickyExtraLifetime",
+          "t": "number"
+        },
+        {
+          "n": "setDefaults",
+          "t": "bool"
+        },
+        {
+          "n": "hitShake",
+          "t": "number"
+        },
+        {
+          "n": "fragBullet",
+          "t": "content"
+        },
+        {
+          "n": "delayFrags",
+          "t": "bool"
+        },
+        {
+          "n": "fragRandomSpread",
+          "t": "number"
+        },
+        {
+          "n": "fragSpread",
+          "t": "number"
+        },
+        {
+          "n": "fragAngle",
+          "t": "number"
+        },
+        {
+          "n": "fragBullets",
+          "t": "number"
+        },
+        {
+          "n": "fragVelocityMin",
+          "t": "number"
+        },
+        {
+          "n": "fragLifeMin",
+          "t": "number"
+        },
+        {
+          "n": "fragOffsetMin",
+          "t": "number"
+        },
+        {
+          "n": "pierceFragCap",
+          "t": "number"
+        },
+        {
+          "n": "intervalBullet",
+          "t": "content"
+        },
+        {
+          "n": "bulletInterval",
+          "t": "number"
+        },
+        {
+          "n": "intervalBullets",
+          "t": "number"
+        },
+        {
+          "n": "intervalRandomSpread",
+          "t": "number"
+        },
+        {
+          "n": "intervalSpread",
+          "t": "number"
+        },
+        {
+          "n": "intervalAngle",
+          "t": "number"
+        },
+        {
+          "n": "intervalDelay",
+          "t": "number"
+        },
+        {
+          "n": "underwater",
+          "t": "bool"
+        },
+        {
+          "n": "hitColor",
+          "t": "color"
+        },
+        {
+          "n": "healColor",
+          "t": "color"
+        },
+        {
+          "n": "healEffect",
+          "t": "raw"
+        },
+        {
+          "n": "showStats",
+          "t": "bool"
+        },
+        {
+          "n": "spawnBulletRandomSpread",
+          "t": "number"
+        },
+        {
+          "n": "spawnUnit",
+          "t": "content"
+        },
+        {
+          "n": "despawnUnit",
+          "t": "content"
+        },
+        {
+          "n": "despawnUnitChance",
+          "t": "number"
+        },
+        {
+          "n": "despawnUnitCount",
+          "t": "number"
+        },
+        {
+          "n": "despawnUnitRadius",
+          "t": "number"
+        },
+        {
+          "n": "faceOutwards",
+          "t": "bool"
+        },
+        {
+          "n": "trailColor",
+          "t": "color"
+        },
+        {
+          "n": "trailChance",
+          "t": "number"
+        },
+        {
+          "n": "trailInterval",
+          "t": "number"
+        },
+        {
+          "n": "trailMinVelocity",
+          "t": "number"
+        },
+        {
+          "n": "trailEffect",
+          "t": "raw"
+        },
+        {
+          "n": "trailSpread",
+          "t": "number"
+        },
+        {
+          "n": "trailParam",
+          "t": "number"
+        },
+        {
+          "n": "trailRotation",
+          "t": "bool"
+        },
+        {
+          "n": "trailInterp",
+          "t": "raw"
+        },
+        {
+          "n": "trailLength",
+          "t": "number"
+        },
+        {
+          "n": "trailWidth",
+          "t": "number"
+        },
+        {
+          "n": "trailSinMag",
+          "t": "number"
+        },
+        {
+          "n": "circleShooter",
+          "t": "bool"
+        },
+        {
+          "n": "circleShooterRadius",
+          "t": "number"
+        },
+        {
+          "n": "circleShooterRadiusSmooth",
+          "t": "number"
+        },
+        {
+          "n": "circleShooterRotateSpeed",
+          "t": "number"
+        },
+        {
+          "n": "splashDamageRadius",
+          "t": "number"
+        },
+        {
+          "n": "splashDamagePierce",
+          "t": "bool"
+        },
+        {
+          "n": "incendAmount",
+          "t": "number"
+        },
+        {
+          "n": "incendSpread",
+          "t": "number"
+        },
+        {
+          "n": "incendChance",
+          "t": "number"
+        },
+        {
+          "n": "homingPower",
+          "t": "number"
+        },
+        {
+          "n": "homingRange",
+          "t": "number"
+        },
+        {
+          "n": "homingDelay",
+          "t": "number"
+        },
+        {
+          "n": "followAimSpeed",
+          "t": "number"
+        },
+        {
+          "n": "suppressionRange",
+          "t": "number"
+        },
+        {
+          "n": "suppressionDuration",
+          "t": "number"
+        },
+        {
+          "n": "suppressionEffectChance",
+          "t": "number"
+        },
+        {
+          "n": "suppressColor",
+          "t": "color"
+        },
+        {
+          "n": "lightningColor",
+          "t": "color"
+        },
+        {
+          "n": "lightning",
+          "t": "number"
+        },
+        {
+          "n": "lightningLength",
+          "t": "number"
+        },
+        {
+          "n": "lightningLengthRand",
+          "t": "number"
+        },
+        {
+          "n": "lightningDamage",
+          "t": "number"
+        },
+        {
+          "n": "lightningCone",
+          "t": "number"
+        },
+        {
+          "n": "lightningAngle",
+          "t": "number"
+        },
+        {
+          "n": "lightningType",
+          "t": "content"
+        },
+        {
+          "n": "weaveScale",
+          "t": "number"
+        },
+        {
+          "n": "weaveMag",
+          "t": "number"
+        },
+        {
+          "n": "weaveRandom",
+          "t": "bool"
+        },
+        {
+          "n": "rotateSpeed",
+          "t": "number"
+        },
+        {
+          "n": "puddles",
+          "t": "number"
+        },
+        {
+          "n": "puddleRange",
+          "t": "number"
+        },
+        {
+          "n": "puddleAmount",
+          "t": "number"
+        },
+        {
+          "n": "puddleLiquid",
+          "t": "content"
+        },
+        {
+          "n": "displayAmmoMultiplier",
+          "t": "bool"
+        },
+        {
+          "n": "statLiquidConsumed",
+          "t": "number"
+        },
+        {
+          "n": "lightRadius",
+          "t": "number"
+        },
+        {
+          "n": "lightOpacity",
+          "t": "number"
+        },
+        {
+          "n": "lightColor",
+          "t": "color"
+        }
+      ]
+    },
+    "ContinuousBulletType": {
+      "extends": "BulletType",
+      "ctype": "bullet",
+      "file": "C:/Users/XN325/Desktop/mindustry/Mindustry-160.5/core/src/mindustry/entities/bullet/ContinuousBulletType.java",
+      "fields": [
+        {
+          "n": "length",
+          "t": "number"
+        },
+        {
+          "n": "shake",
+          "t": "number"
+        },
+        {
+          "n": "damageInterval",
+          "t": "number"
+        },
+        {
+          "n": "largeHit",
+          "t": "bool"
+        },
+        {
+          "n": "continuous",
+          "t": "bool"
+        },
+        {
+          "n": "timescaleDamage",
+          "t": "bool"
+        }
+      ]
+    },
+    "ContinuousFlameBulletType": {
+      "extends": "ContinuousBulletType",
+      "ctype": "bullet",
+      "file": "C:/Users/XN325/Desktop/mindustry/Mindustry-160.5/core/src/mindustry/entities/bullet/ContinuousFlameBulletType.java",
+      "fields": [
+        {
+          "n": "lightStroke",
+          "t": "number"
+        },
+        {
+          "n": "width",
+          "t": "number"
+        },
+        {
+          "n": "divisions",
+          "t": "number"
+        },
+        {
+          "n": "drawFlare",
+          "t": "bool"
+        },
+        {
+          "n": "flareWidth",
+          "t": "number"
+        },
+        {
+          "n": "rotateFlare",
+          "t": "bool"
+        },
+        {
+          "n": "lengthInterp",
+          "t": "raw"
+        }
+      ]
+    },
+    "ContinuousLaserBulletType": {
+      "extends": "ContinuousBulletType",
+      "ctype": "bullet",
+      "file": "C:/Users/XN325/Desktop/mindustry/Mindustry-160.5/core/src/mindustry/entities/bullet/ContinuousLaserBulletType.java",
+      "fields": [
+        {
+          "n": "fadeTime",
+          "t": "number"
+        },
+        {
+          "n": "lightStroke",
+          "t": "number"
+        },
+        {
+          "n": "divisions",
+          "t": "number"
+        },
+        {
+          "n": "strokeFrom",
+          "t": "number"
+        },
+        {
+          "n": "backLength",
+          "t": "number"
+        },
+        {
+          "n": "width",
+          "t": "number"
+        }
+      ]
+    },
+    "EmpBulletType": {
+      "extends": "BasicBulletType",
+      "ctype": "bullet",
+      "file": "C:/Users/XN325/Desktop/mindustry/Mindustry-160.5/core/src/mindustry/entities/bullet/EmpBulletType.java",
+      "fields": [
+        {
+          "n": "radius",
+          "t": "number"
+        },
+        {
+          "n": "timeIncrease",
+          "t": "number"
+        },
+        {
+          "n": "powerDamageScl",
+          "t": "number"
+        },
+        {
+          "n": "hitPowerEffect",
+          "t": "raw"
+        },
+        {
+          "n": "hitUnits",
+          "t": "bool"
+        },
+        {
+          "n": "unitDamageScl",
+          "t": "number"
+        }
+      ]
+    },
+    "EmptyBulletType": {
+      "extends": "BulletType",
+      "ctype": "bullet",
+      "file": "C:/Users/XN325/Desktop/mindustry/Mindustry-160.5/core/src/mindustry/entities/bullet/EmptyBulletType.java",
+      "fields": []
+    },
+    "ExplosionBulletType": {
+      "extends": "BulletType",
+      "ctype": "bullet",
+      "file": "C:/Users/XN325/Desktop/mindustry/Mindustry-160.5/core/src/mindustry/entities/bullet/ExplosionBulletType.java",
+      "fields": []
+    },
+    "FireBulletType": {
+      "extends": "BulletType",
+      "ctype": "bullet",
+      "file": "C:/Users/XN325/Desktop/mindustry/Mindustry-160.5/core/src/mindustry/entities/bullet/FireBulletType.java",
+      "fields": [
+        {
+          "n": "colorFrom",
+          "t": "color"
+        },
+        {
+          "n": "radius",
+          "t": "number"
+        },
+        {
+          "n": "velMin",
+          "t": "number"
+        },
+        {
+          "n": "fireTrailChance",
+          "t": "number"
+        },
+        {
+          "n": "trailEffect2",
+          "t": "raw"
+        },
+        {
+          "n": "fireEffectChance",
+          "t": "number"
+        }
+      ]
+    },
+    "FlakBulletType": {
+      "extends": "BasicBulletType",
+      "ctype": "bullet",
+      "file": "C:/Users/XN325/Desktop/mindustry/Mindustry-160.5/core/src/mindustry/entities/bullet/FlakBulletType.java",
+      "fields": [
+        {
+          "n": "explodeRange",
+          "t": "number"
+        }
+      ]
+    },
+    "InterceptorBulletType": {
+      "extends": "BasicBulletType",
+      "ctype": "bullet",
+      "file": "C:/Users/XN325/Desktop/mindustry/Mindustry-160.5/core/src/mindustry/entities/bullet/InterceptorBulletType.java",
+      "fields": []
+    },
+    "LaserBoltBulletType": {
+      "extends": "BasicBulletType",
+      "ctype": "bullet",
+      "file": "C:/Users/XN325/Desktop/mindustry/Mindustry-160.5/core/src/mindustry/entities/bullet/LaserBoltBulletType.java",
+      "fields": [
+        {
+          "n": "width",
+          "t": "number"
+        }
+      ]
+    },
+    "LaserBulletType": {
+      "extends": "BulletType",
+      "ctype": "bullet",
+      "file": "C:/Users/XN325/Desktop/mindustry/Mindustry-160.5/core/src/mindustry/entities/bullet/LaserBulletType.java",
+      "fields": [
+        {
+          "n": "laserEffect",
+          "t": "raw"
+        },
+        {
+          "n": "length",
+          "t": "number"
+        },
+        {
+          "n": "width",
+          "t": "number"
+        },
+        {
+          "n": "lengthFalloff",
+          "t": "number"
+        },
+        {
+          "n": "sideLength",
+          "t": "number"
+        },
+        {
+          "n": "sideAngle",
+          "t": "number"
+        },
+        {
+          "n": "lightningSpacing",
+          "t": "number"
+        },
+        {
+          "n": "largeHit",
+          "t": "bool"
+        }
+      ]
+    },
+    "LightningBulletType": {
+      "extends": "BulletType",
+      "ctype": "bullet",
+      "file": "C:/Users/XN325/Desktop/mindustry/Mindustry-160.5/core/src/mindustry/entities/bullet/LightningBulletType.java",
+      "fields": []
+    },
+    "LiquidBulletType": {
+      "extends": "BulletType",
+      "ctype": "bullet",
+      "file": "C:/Users/XN325/Desktop/mindustry/Mindustry-160.5/core/src/mindustry/entities/bullet/LiquidBulletType.java",
+      "fields": [
+        {
+          "n": "liquid",
+          "t": "content"
+        },
+        {
+          "n": "puddleSize",
+          "t": "number"
+        },
+        {
+          "n": "orbSize",
+          "t": "number"
+        },
+        {
+          "n": "boilTime",
+          "t": "number"
+        }
+      ]
+    },
+    "MassDriverBolt": {
+      "extends": "BasicBulletType",
+      "ctype": "bullet",
+      "file": "C:/Users/XN325/Desktop/mindustry/Mindustry-160.5/core/src/mindustry/entities/bullet/MassDriverBolt.java",
+      "fields": []
+    },
+    "MissileBulletType": {
+      "extends": "BasicBulletType",
+      "ctype": "bullet",
+      "file": "C:/Users/XN325/Desktop/mindustry/Mindustry-160.5/core/src/mindustry/entities/bullet/MissileBulletType.java",
+      "fields": []
+    },
+    "MultiBulletType": {
+      "extends": "BulletType",
+      "ctype": "bullet",
+      "file": "C:/Users/XN325/Desktop/mindustry/Mindustry-160.5/core/src/mindustry/entities/bullet/MultiBulletType.java",
+      "fields": [
+        {
+          "n": "bullets",
+          "t": "raw"
+        },
+        {
+          "n": "repeat",
+          "t": "number"
+        }
+      ]
+    },
+    "PointBulletType": {
+      "extends": "BulletType",
+      "ctype": "bullet",
+      "file": "C:/Users/XN325/Desktop/mindustry/Mindustry-160.5/core/src/mindustry/entities/bullet/PointBulletType.java",
+      "fields": [
+        {
+          "n": "trailSpacing",
+          "t": "number"
+        }
+      ]
+    },
+    "PointLaserBulletType": {
+      "extends": "BulletType",
+      "ctype": "bullet",
+      "file": "C:/Users/XN325/Desktop/mindustry/Mindustry-160.5/core/src/mindustry/entities/bullet/PointLaserBulletType.java",
+      "fields": [
+        {
+          "n": "sprite",
+          "t": "text"
+        },
+        {
+          "n": "laserEnd",
+          "t": "raw"
+        },
+        {
+          "n": "color",
+          "t": "color"
+        },
+        {
+          "n": "beamEffect",
+          "t": "raw"
+        },
+        {
+          "n": "beamEffectInterval",
+          "t": "number"
+        },
+        {
+          "n": "oscScl",
+          "t": "number"
+        },
+        {
+          "n": "damageInterval",
+          "t": "number"
+        },
+        {
+          "n": "shake",
+          "t": "number"
+        }
+      ]
+    },
+    "RailBulletType": {
+      "extends": "BulletType",
+      "ctype": "bullet",
+      "file": "C:/Users/XN325/Desktop/mindustry/Mindustry-160.5/core/src/mindustry/entities/bullet/RailBulletType.java",
+      "fields": [
+        {
+          "n": "pierceEffect",
+          "t": "raw"
+        },
+        {
+          "n": "endEffect",
+          "t": "raw"
+        },
+        {
+          "n": "length",
+          "t": "number"
+        },
+        {
+          "n": "pointEffectSpace",
+          "t": "number"
+        }
+      ]
+    },
+    "SapBulletType": {
+      "extends": "BulletType",
+      "ctype": "bullet",
+      "file": "C:/Users/XN325/Desktop/mindustry/Mindustry-160.5/core/src/mindustry/entities/bullet/SapBulletType.java",
+      "fields": [
+        {
+          "n": "length",
+          "t": "number"
+        },
+        {
+          "n": "sapStrength",
+          "t": "number"
+        },
+        {
+          "n": "width",
+          "t": "number"
+        },
+        {
+          "n": "sprite",
+          "t": "text"
+        },
+        {
+          "n": "laserRegion",
+          "t": "raw"
+        },
+        {
+          "n": "laserEndRegion",
+          "t": "raw"
+        }
+      ]
+    },
+    "ShrapnelBulletType": {
+      "extends": "BulletType",
+      "ctype": "bullet",
+      "file": "C:/Users/XN325/Desktop/mindustry/Mindustry-160.5/core/src/mindustry/entities/bullet/ShrapnelBulletType.java",
+      "fields": [
+        {
+          "n": "length",
+          "t": "number"
+        },
+        {
+          "n": "width",
+          "t": "number"
+        },
+        {
+          "n": "fromColor",
+          "t": "color"
+        },
+        {
+          "n": "hitLarge",
+          "t": "bool"
+        },
+        {
+          "n": "serrations",
+          "t": "number"
+        },
+        {
+          "n": "serrationLenScl",
+          "t": "number"
+        }
+      ]
+    },
+    "SpaceLiquidBulletType": {
+      "extends": "BulletType",
+      "ctype": "bullet",
+      "file": "C:/Users/XN325/Desktop/mindustry/Mindustry-160.5/core/src/mindustry/entities/bullet/SpaceLiquidBulletType.java",
+      "fields": [
+        {
+          "n": "orbSize",
+          "t": "number"
+        }
+      ]
+    },
+    "CellLiquid": {
+      "extends": "Liquid",
+      "ctype": "liquid",
+      "file": "C:/Users/XN325/Desktop/mindustry/Mindustry-160.5/core/src/mindustry/type/CellLiquid.java",
+      "fields": [
+        {
+          "n": "cells",
+          "t": "number"
+        },
+        {
+          "n": "spreadTarget",
+          "t": "content"
+        },
+        {
+          "n": "maxSpread",
+          "t": "number"
+        }
+      ]
+    },
+    "Item": {
+      "extends": "UnlockableContent",
+      "ctype": "item",
+      "file": "C:/Users/XN325/Desktop/mindustry/Mindustry-160.5/core/src/mindustry/type/Item.java",
+      "fields": [
+        {
+          "n": "color",
+          "t": "color"
+        },
+        {
+          "n": "explosiveness",
+          "t": "number"
+        },
+        {
+          "n": "flammability",
+          "t": "number"
+        },
+        {
+          "n": "radioactivity",
+          "t": "number"
+        },
+        {
+          "n": "charge",
+          "t": "number"
+        },
+        {
+          "n": "hardness",
+          "t": "number"
+        },
+        {
+          "n": "cost",
+          "t": "number"
+        },
+        {
+          "n": "healthScaling",
+          "t": "number"
+        },
+        {
+          "n": "lowPriority",
+          "t": "bool"
+        },
+        {
+          "n": "frames",
+          "t": "number"
+        },
+        {
+          "n": "transitionFrames",
+          "t": "number"
+        },
+        {
+          "n": "frameTime",
+          "t": "number"
+        },
+        {
+          "n": "buildable",
+          "t": "bool"
+        },
+        {
+          "n": "hidden",
+          "t": "bool"
+        }
+      ]
+    },
+    "Liquid": {
+      "extends": "UnlockableContent",
+      "ctype": "liquid",
+      "file": "C:/Users/XN325/Desktop/mindustry/Mindustry-160.5/core/src/mindustry/type/Liquid.java",
+      "fields": [
+        {
+          "n": "gas",
+          "t": "bool"
+        },
+        {
+          "n": "color",
+          "t": "color"
+        },
+        {
+          "n": "barColor",
+          "t": "color"
+        },
+        {
+          "n": "flammability",
+          "t": "number"
+        },
+        {
+          "n": "temperature",
+          "t": "number"
+        },
+        {
+          "n": "heatCapacity",
+          "t": "number"
+        },
+        {
+          "n": "viscosity",
+          "t": "number"
+        },
+        {
+          "n": "explosiveness",
+          "t": "number"
+        },
+        {
+          "n": "blockReactive",
+          "t": "bool"
+        },
+        {
+          "n": "coolant",
+          "t": "bool"
+        },
+        {
+          "n": "moveThroughBlocks",
+          "t": "bool"
+        },
+        {
+          "n": "incinerable",
+          "t": "bool"
+        },
+        {
+          "n": "effect",
+          "t": "content"
+        },
+        {
+          "n": "particleEffect",
+          "t": "raw"
+        },
+        {
+          "n": "particleSpacing",
+          "t": "number"
+        },
+        {
+          "n": "boilPoint",
+          "t": "number"
+        },
+        {
+          "n": "capPuddles",
+          "t": "bool"
+        },
+        {
+          "n": "vaporEffect",
+          "t": "raw"
+        },
+        {
+          "n": "hidden",
+          "t": "bool"
+        }
+      ]
+    },
+    "Planet": {
+      "extends": "UnlockableContent",
+      "ctype": "planet",
+      "file": "C:/Users/XN325/Desktop/mindustry/Mindustry-160.5/core/src/mindustry/type/Planet.java",
+      "fields": [
+        {
+          "n": "mesh",
+          "t": "raw"
+        },
+        {
+          "n": "cloudMesh",
+          "t": "raw"
+        },
+        {
+          "n": "gridMesh",
+          "t": "raw"
+        },
+        {
+          "n": "grid",
+          "t": "raw"
+        },
+        {
+          "n": "generator",
+          "t": "raw"
+        },
+        {
+          "n": "orbitSpacing",
+          "t": "number"
+        },
+        {
+          "n": "radius",
+          "t": "number"
+        },
+        {
+          "n": "camRadius",
+          "t": "number"
+        },
+        {
+          "n": "minZoom",
+          "t": "number"
+        },
+        {
+          "n": "maxZoom",
+          "t": "number"
+        },
+        {
+          "n": "drawOrbit",
+          "t": "bool"
+        },
+        {
+          "n": "atmosphereRadIn",
+          "t": "number"
+        },
+        {
+          "n": "clipRadius",
+          "t": "number"
+        },
+        {
+          "n": "orbitRadius",
+          "t": "number"
+        },
+        {
+          "n": "totalRadius",
+          "t": "number"
+        },
+        {
+          "n": "orbitTime",
+          "t": "number"
+        },
+        {
+          "n": "rotateTime",
+          "t": "number"
+        },
+        {
+          "n": "orbitOffset",
+          "t": "number"
+        },
+        {
+          "n": "sectorApproxRadius",
+          "t": "number"
+        },
+        {
+          "n": "tidalLock",
+          "t": "bool"
+        },
+        {
+          "n": "accessible",
+          "t": "bool"
+        },
+        {
+          "n": "defaultEnv",
+          "t": "number"
+        },
+        {
+          "n": "updateLighting",
+          "t": "bool"
+        },
+        {
+          "n": "lightSrcFrom",
+          "t": "number"
+        },
+        {
+          "n": "startSector",
+          "t": "number"
+        },
+        {
+          "n": "sectorSeed",
+          "t": "number"
+        },
+        {
+          "n": "launchCapacityMultiplier",
+          "t": "number"
+        },
+        {
+          "n": "bloom",
+          "t": "bool"
+        },
+        {
+          "n": "visible",
+          "t": "bool"
+        },
+        {
+          "n": "hasAtmosphere",
+          "t": "bool"
+        },
+        {
+          "n": "allowLaunchSchematics",
+          "t": "bool"
+        },
+        {
+          "n": "allowLaunchLoadout",
+          "t": "bool"
+        },
+        {
+          "n": "allowSectorInvasion",
+          "t": "bool"
+        },
+        {
+          "n": "allowLegacyLaunchPads",
+          "t": "bool"
+        },
+        {
+          "n": "clearSectorOnLose",
+          "t": "bool"
+        },
+        {
+          "n": "enemyBuildSpeedMultiplier",
+          "t": "number"
+        },
+        {
+          "n": "enemyFactoryActivationDelay",
+          "t": "number"
+        },
+        {
+          "n": "enemyInfiniteItems",
+          "t": "bool"
+        },
+        {
+          "n": "enemyCoreSpawnReplace",
+          "t": "bool"
+        },
+        {
+          "n": "prebuildBase",
+          "t": "bool"
+        },
+        {
+          "n": "allowWaves",
+          "t": "bool"
+        },
+        {
+          "n": "allowLaunchToNumbered",
+          "t": "bool"
+        },
+        {
+          "n": "allowCampaignRules",
+          "t": "bool"
+        },
+        {
+          "n": "icon",
+          "t": "text"
+        },
+        {
+          "n": "launchMusic",
+          "t": "raw"
+        },
+        {
+          "n": "ambientMusic",
+          "t": "raw"
+        },
+        {
+          "n": "darkMusic",
+          "t": "raw"
+        },
+        {
+          "n": "alwaysPlayMusic",
+          "t": "bool"
+        },
+        {
+          "n": "defaultCore",
+          "t": "content"
+        },
+        {
+          "n": "parent",
+          "t": "content"
+        },
+        {
+          "n": "solarSystem",
+          "t": "content"
+        },
+        {
+          "n": "techTree",
+          "t": "raw"
+        },
+        {
+          "n": "allowSelfSectorLaunch",
+          "t": "bool"
+        },
+        {
+          "n": "autoAssignPlanet",
+          "t": "bool"
+        },
+        {
+          "n": "statParent",
+          "t": "content"
+        },
+        {
+          "n": "ruleSetter",
+          "t": "raw"
+        },
+        {
+          "n": "showRtsAIRule",
+          "t": "bool"
+        },
+        {
+          "n": "loadPlanetData",
+          "t": "bool"
+        },
+        {
+          "n": "data",
+          "t": "raw"
+        },
+        {
+          "n": "attackSectors",
+          "t": "raw"
+        }
+      ]
+    },
+    "SectorPreset": {
+      "extends": "UnlockableContent",
+      "ctype": "sector",
+      "file": "C:/Users/XN325/Desktop/mindustry/Mindustry-160.5/core/src/mindustry/type/SectorPreset.java",
+      "fields": [
+        {
+          "n": "generator",
+          "t": "raw"
+        },
+        {
+          "n": "planet",
+          "t": "content"
+        },
+        {
+          "n": "sector",
+          "t": "raw"
+        },
+        {
+          "n": "captureWave",
+          "t": "number"
+        },
+        {
+          "n": "rules",
+          "t": "raw"
+        },
+        {
+          "n": "difficulty",
+          "t": "number"
+        },
+        {
+          "n": "startWaveTimeMultiplier",
+          "t": "number"
+        },
+        {
+          "n": "addStartingItems",
+          "t": "bool"
+        },
+        {
+          "n": "noLighting",
+          "t": "bool"
+        },
+        {
+          "n": "isLastSector",
+          "t": "bool"
+        },
+        {
+          "n": "requireUnlock",
+          "t": "bool"
+        },
+        {
+          "n": "showHidden",
+          "t": "bool"
+        },
+        {
+          "n": "showSectorLandInfo",
+          "t": "bool"
+        },
+        {
+          "n": "overrideLaunchDefaults",
+          "t": "bool"
+        },
+        {
+          "n": "allowLaunchSchematics",
+          "t": "bool"
+        },
+        {
+          "n": "allowLaunchLoadout",
+          "t": "bool"
+        },
+        {
+          "n": "attackAfterWaves",
+          "t": "bool"
+        },
+        {
+          "n": "originalPosition",
+          "t": "number"
+        },
+        {
+          "n": "outline",
+          "t": "bool"
+        },
+        {
+          "n": "outlineRadius",
+          "t": "number"
+        },
+        {
+          "n": "outlineColor",
+          "t": "color"
+        }
+      ]
+    },
+    "StatusEffect": {
+      "extends": "UnlockableContent",
+      "ctype": "status",
+      "file": "C:/Users/XN325/Desktop/mindustry/Mindustry-160.5/core/src/mindustry/type/StatusEffect.java",
+      "fields": [
+        {
+          "n": "damageMultiplier",
+          "t": "number"
+        },
+        {
+          "n": "healthMultiplier",
+          "t": "number"
+        },
+        {
+          "n": "speedMultiplier",
+          "t": "number"
+        },
+        {
+          "n": "reloadMultiplier",
+          "t": "number"
+        },
+        {
+          "n": "buildSpeedMultiplier",
+          "t": "number"
+        },
+        {
+          "n": "dragMultiplier",
+          "t": "number"
+        },
+        {
+          "n": "transitionDamage",
+          "t": "number"
+        },
+        {
+          "n": "disarm",
+          "t": "bool"
+        },
+        {
+          "n": "damage",
+          "t": "number"
+        },
+        {
+          "n": "intervalDamageTime",
+          "t": "number"
+        },
+        {
+          "n": "intervalDamage",
+          "t": "number"
+        },
+        {
+          "n": "intervalDamagePierce",
+          "t": "bool"
+        },
+        {
+          "n": "effectChance",
+          "t": "number"
+        },
+        {
+          "n": "parentizeEffect",
+          "t": "bool"
+        },
+        {
+          "n": "permanent",
+          "t": "bool"
+        },
+        {
+          "n": "reactive",
+          "t": "bool"
+        },
+        {
+          "n": "dynamic",
+          "t": "bool"
+        },
+        {
+          "n": "show",
+          "t": "bool"
+        },
+        {
+          "n": "effect",
+          "t": "raw"
+        },
+        {
+          "n": "applyEffect",
+          "t": "raw"
+        },
+        {
+          "n": "applyExtend",
+          "t": "bool"
+        },
+        {
+          "n": "parentizeApplyEffect",
+          "t": "bool"
+        },
+        {
+          "n": "outline",
+          "t": "bool"
+        }
+      ]
+    },
+    "TeamEntry": {
+      "extends": "UnlockableContent",
+      "ctype": "team",
+      "file": "C:/Users/XN325/Desktop/mindustry/Mindustry-160.5/core/src/mindustry/type/TeamEntry.java",
+      "fields": []
+    },
+    "ErekirUnitType": {
+      "extends": "UnitType",
+      "ctype": "unit",
+      "file": "C:/Users/XN325/Desktop/mindustry/Mindustry-160.5/core/src/mindustry/type/unit/ErekirUnitType.java",
+      "fields": []
+    },
+    "MissileUnitType": {
+      "extends": "UnitType",
+      "ctype": "unit",
+      "file": "C:/Users/XN325/Desktop/mindustry/Mindustry-160.5/core/src/mindustry/type/unit/MissileUnitType.java",
+      "fields": []
+    },
+    "NeoplasmUnitType": {
+      "extends": "UnitType",
+      "ctype": "unit",
+      "file": "C:/Users/XN325/Desktop/mindustry/Mindustry-160.5/core/src/mindustry/type/unit/NeoplasmUnitType.java",
+      "fields": []
+    },
+    "TankUnitType": {
+      "extends": "ErekirUnitType",
+      "ctype": "unit",
+      "file": "C:/Users/XN325/Desktop/mindustry/Mindustry-160.5/core/src/mindustry/type/unit/TankUnitType.java",
+      "fields": []
+    },
+    "UnitType": {
+      "extends": "UnlockableContent",
+      "ctype": "unit",
+      "file": "C:/Users/XN325/Desktop/mindustry/Mindustry-160.5/core/src/mindustry/type/UnitType.java",
+      "fields": [
+        {
+          "n": "envRequired",
+          "t": "number"
+        },
+        {
+          "n": "envEnabled",
+          "t": "number"
+        },
+        {
+          "n": "envDisabled",
+          "t": "number"
+        },
+        {
+          "n": "constructor",
+          "t": "raw"
+        },
+        {
+          "n": "healColor",
+          "t": "color"
+        },
+        {
+          "n": "lightColor",
+          "t": "color"
+        },
+        {
+          "n": "shieldColor",
+          "t": "color"
+        },
+        {
+          "n": "deathSound",
+          "t": "raw"
+        },
+        {
+          "n": "deathSoundVolume",
+          "t": "number"
+        },
+        {
+          "n": "wreckSound",
+          "t": "raw"
+        },
+        {
+          "n": "wreckSoundVolume",
+          "t": "number"
+        },
+        {
+          "n": "loopSound",
+          "t": "raw"
+        },
+        {
+          "n": "loopSoundVolume",
+          "t": "number"
+        },
+        {
+          "n": "stepSound",
+          "t": "raw"
+        },
+        {
+          "n": "stepSoundVolume",
+          "t": "number"
+        },
+        {
+          "n": "stepSoundPitch",
+          "t": "number"
+        },
+        {
+          "n": "tankMoveSound",
+          "t": "raw"
+        },
+        {
+          "n": "moveSound",
+          "t": "raw"
+        },
+        {
+          "n": "moveSoundVolume",
+          "t": "number"
+        },
+        {
+          "n": "moveSoundPitchMin",
+          "t": "number"
+        },
+        {
+          "n": "tankMoveVolume",
+          "t": "number"
+        },
+        {
+          "n": "fallEffect",
+          "t": "raw"
+        },
+        {
+          "n": "fallEngineEffect",
+          "t": "raw"
+        },
+        {
+          "n": "deathExplosionEffect",
+          "t": "raw"
+        },
+        {
+          "n": "treadEffect",
+          "t": "raw"
+        },
+        {
+          "n": "useEngineElevation",
+          "t": "bool"
+        },
+        {
+          "n": "engineColor",
+          "t": "color"
+        },
+        {
+          "n": "engineColorInner",
+          "t": "color"
+        },
+        {
+          "n": "trailLength",
+          "t": "number"
+        },
+        {
+          "n": "trailColor",
+          "t": "color"
+        },
+        {
+          "n": "flowfieldPathType",
+          "t": "number"
+        },
+        {
+          "n": "pathCost",
+          "t": "raw"
+        },
+        {
+          "n": "pathCostId",
+          "t": "number"
+        },
+        {
+          "n": "sample",
+          "t": "raw"
+        },
+        {
+          "n": "targetFlags",
+          "t": "raw"
+        },
+        {
+          "n": "allowChangeCommands",
+          "t": "bool"
+        },
+        {
+          "n": "defaultCommand",
+          "t": "content"
+        },
+        {
+          "n": "outlineColor",
+          "t": "color"
+        },
+        {
+          "n": "outlineRadius",
+          "t": "number"
+        },
+        {
+          "n": "outlines",
+          "t": "bool"
+        },
+        {
+          "n": "itemCapacity",
+          "t": "number"
+        },
+        {
+          "n": "ammoCapacity",
+          "t": "number"
+        },
+        {
+          "n": "mineTier",
+          "t": "number"
+        },
+        {
+          "n": "mineSpeed",
+          "t": "number"
+        },
+        {
+          "n": "mineWalls",
+          "t": "bool"
+        },
+        {
+          "n": "mineHardnessScaling",
+          "t": "bool"
+        },
+        {
+          "n": "mineSound",
+          "t": "raw"
+        },
+        {
+          "n": "mineSoundVolume",
+          "t": "number"
+        },
+        {
+          "n": "legCount",
+          "t": "number"
+        },
+        {
+          "n": "legGroupSize",
+          "t": "number"
+        },
+        {
+          "n": "legBaseUnder",
+          "t": "bool"
+        },
+        {
+          "n": "lockLegBase",
+          "t": "bool"
+        },
+        {
+          "n": "legContinuousMove",
+          "t": "bool"
+        },
+        {
+          "n": "flipBackLegs",
+          "t": "bool"
+        },
+        {
+          "n": "emitWalkSound",
+          "t": "bool"
+        },
+        {
+          "n": "emitWalkEffect",
+          "t": "bool"
+        },
+        {
+          "n": "mechLandShake",
+          "t": "number"
+        },
+        {
+          "n": "mechSideSway",
+          "t": "number"
+        },
+        {
+          "n": "mechStepParticles",
+          "t": "bool"
+        },
+        {
+          "n": "mechLegColor",
+          "t": "color"
+        },
+        {
+          "n": "treadRects",
+          "t": "raw"
+        },
+        {
+          "n": "treadFrames",
+          "t": "number"
+        },
+        {
+          "n": "treadPullOffset",
+          "t": "number"
+        },
+        {
+          "n": "crushFragile",
+          "t": "bool"
+        },
+        {
+          "n": "segments",
+          "t": "number"
+        },
+        {
+          "n": "segmentUnits",
+          "t": "number"
+        },
+        {
+          "n": "segmentUnit",
+          "t": "content"
+        },
+        {
+          "n": "segmentEndUnit",
+          "t": "content"
+        },
+        {
+          "n": "segmentLayerOrder",
+          "t": "bool"
+        },
+        {
+          "n": "lifetime",
+          "t": "number"
+        },
+        {
+          "n": "homingDelay",
+          "t": "number"
+        },
+        {
+          "n": "segmentOutlineRegions",
+          "t": "raw"
+        },
+        {
+          "n": "treadRegions",
+          "t": "raw"
+        },
+        {
+          "n": "rotation",
+          "t": "raw"
+        },
+        {
+          "n": "color",
+          "t": "color"
+        }
+      ]
+    },
+    "MagneticStorm": {
+      "extends": "Weather",
+      "ctype": "weather",
+      "file": "C:/Users/XN325/Desktop/mindustry/Mindustry-160.5/core/src/mindustry/type/weather/MagneticStorm.java",
+      "fields": []
+    },
+    "ParticleWeather": {
+      "extends": "Weather",
+      "ctype": "weather",
+      "file": "C:/Users/XN325/Desktop/mindustry/Mindustry-160.5/core/src/mindustry/type/weather/ParticleWeather.java",
+      "fields": [
+        {
+          "n": "particleRegion",
+          "t": "text"
+        },
+        {
+          "n": "region",
+          "t": "raw"
+        },
+        {
+          "n": "yspeed",
+          "t": "number"
+        },
+        {
+          "n": "sinSclMin",
+          "t": "number"
+        },
+        {
+          "n": "noiseColor",
+          "t": "color"
+        },
+        {
+          "n": "drawNoise",
+          "t": "bool"
+        },
+        {
+          "n": "noiseLayers",
+          "t": "number"
+        },
+        {
+          "n": "noiseLayerSpeedM",
+          "t": "number"
+        },
+        {
+          "n": "noisePath",
+          "t": "text"
+        },
+        {
+          "n": "noise",
+          "t": "raw"
+        }
+      ]
+    },
+    "RainWeather": {
+      "extends": "Weather",
+      "ctype": "weather",
+      "file": "C:/Users/XN325/Desktop/mindustry/Mindustry-160.5/core/src/mindustry/type/weather/RainWeather.java",
+      "fields": [
+        {
+          "n": "yspeed",
+          "t": "number"
+        },
+        {
+          "n": "liquid",
+          "t": "content"
+        },
+        {
+          "n": "splashes",
+          "t": "raw"
+        }
+      ]
+    },
+    "SolarFlare": {
+      "extends": "Weather",
+      "ctype": "weather",
+      "file": "C:/Users/XN325/Desktop/mindustry/Mindustry-160.5/core/src/mindustry/type/weather/SolarFlare.java",
+      "fields": []
+    },
+    "Weather": {
+      "extends": "UnlockableContent",
+      "ctype": "weather",
+      "file": "C:/Users/XN325/Desktop/mindustry/Mindustry-160.5/core/src/mindustry/type/Weather.java",
+      "fields": [
+        {
+          "n": "duration",
+          "t": "number"
+        },
+        {
+          "n": "opacityMultiplier",
+          "t": "number"
+        },
+        {
+          "n": "sound",
+          "t": "raw"
+        },
+        {
+          "n": "soundVol",
+          "t": "number"
+        },
+        {
+          "n": "soundVolOscMag",
+          "t": "number"
+        },
+        {
+          "n": "hidden",
+          "t": "bool"
+        },
+        {
+          "n": "type",
+          "t": "raw"
+        },
+        {
+          "n": "status",
+          "t": "content"
+        },
+        {
+          "n": "statusDuration",
+          "t": "number"
+        },
+        {
+          "n": "statusAir",
+          "t": "bool"
+        },
+        {
+          "n": "weather",
+          "t": "content"
+        },
+        {
+          "n": "maxDuration",
+          "t": "raw"
+        },
+        {
+          "n": "cooldown",
+          "t": "number"
+        },
+        {
+          "n": "intensity",
+          "t": "number"
+        },
+        {
+          "n": "always",
+          "t": "bool"
+        }
+      ]
+    },
+    "Block": {
+      "extends": "UnlockableContent",
+      "ctype": "block",
+      "file": "C:/Users/XN325/Desktop/mindustry/Mindustry-160.5/core/src/mindustry/world/Block.java",
+      "fields": [
+        {
+          "n": "hasItems",
+          "t": "bool"
+        },
+        {
+          "n": "hasLiquids",
+          "t": "bool"
+        },
+        {
+          "n": "hasPower",
+          "t": "bool"
+        },
+        {
+          "n": "outputsLiquid",
+          "t": "bool"
+        },
+        {
+          "n": "consumesPower",
+          "t": "bool"
+        },
+        {
+          "n": "outputsPower",
+          "t": "bool"
+        },
+        {
+          "n": "connectedPower",
+          "t": "bool"
+        },
+        {
+          "n": "conductivePower",
+          "t": "bool"
+        },
+        {
+          "n": "outputsPayload",
+          "t": "bool"
+        },
+        {
+          "n": "acceptsUnitPayloads",
+          "t": "bool"
+        },
+        {
+          "n": "acceptsPayload",
+          "t": "bool"
+        },
+        {
+          "n": "acceptsItems",
+          "t": "bool"
+        },
+        {
+          "n": "alwaysAllowDeposit",
+          "t": "bool"
+        },
+        {
+          "n": "allowedInPayloads",
+          "t": "bool"
+        },
+        {
+          "n": "depositCooldown",
+          "t": "number"
+        },
+        {
+          "n": "separateItemCapacity",
+          "t": "bool"
+        },
+        {
+          "n": "itemCapacity",
+          "t": "number"
+        },
+        {
+          "n": "liquidCapacity",
+          "t": "number"
+        },
+        {
+          "n": "liquidPressure",
+          "t": "number"
+        },
+        {
+          "n": "outputFacing",
+          "t": "bool"
+        },
+        {
+          "n": "noSideBlend",
+          "t": "bool"
+        },
+        {
+          "n": "displayFlow",
+          "t": "bool"
+        },
+        {
+          "n": "inEditor",
+          "t": "bool"
+        },
+        {
+          "n": "editorConfigurable",
+          "t": "bool"
+        },
+        {
+          "n": "lastConfig",
+          "t": "raw"
+        },
+        {
+          "n": "saveConfig",
+          "t": "bool"
+        },
+        {
+          "n": "copyConfig",
+          "t": "bool"
+        },
+        {
+          "n": "clearOnDoubleTap",
+          "t": "bool"
+        },
+        {
+          "n": "update",
+          "t": "bool"
+        },
+        {
+          "n": "destructible",
+          "t": "bool"
+        },
+        {
+          "n": "unloadable",
+          "t": "bool"
+        },
+        {
+          "n": "isDuct",
+          "t": "bool"
+        },
+        {
+          "n": "allowResupply",
+          "t": "bool"
+        },
+        {
+          "n": "solid",
+          "t": "bool"
+        },
+        {
+          "n": "solidifes",
+          "t": "bool"
+        },
+        {
+          "n": "teamPassable",
+          "t": "bool"
+        },
+        {
+          "n": "underBullets",
+          "t": "bool"
+        },
+        {
+          "n": "rotate",
+          "t": "bool"
+        },
+        {
+          "n": "rotateDraw",
+          "t": "bool"
+        },
+        {
+          "n": "rotateDrawEditor",
+          "t": "bool"
+        },
+        {
+          "n": "visualRotationOffset",
+          "t": "number"
+        },
+        {
+          "n": "lockRotation",
+          "t": "bool"
+        },
+        {
+          "n": "ignoreLineRotation",
+          "t": "bool"
+        },
+        {
+          "n": "invertFlip",
+          "t": "bool"
+        },
+        {
+          "n": "variants",
+          "t": "number"
+        },
+        {
+          "n": "drawArrow",
+          "t": "bool"
+        },
+        {
+          "n": "drawTeamOverlay",
+          "t": "bool"
+        },
+        {
+          "n": "saveData",
+          "t": "bool"
+        },
+        {
+          "n": "breakable",
+          "t": "bool"
+        },
+        {
+          "n": "unitMoveBreakable",
+          "t": "bool"
+        },
+        {
+          "n": "rebuildable",
+          "t": "bool"
+        },
+        {
+          "n": "privileged",
+          "t": "bool"
+        },
+        {
+          "n": "requiresWater",
+          "t": "bool"
+        },
+        {
+          "n": "placeableLiquid",
+          "t": "bool"
+        },
+        {
+          "n": "placeablePlayer",
+          "t": "bool"
+        },
+        {
+          "n": "placeableOn",
+          "t": "bool"
+        },
+        {
+          "n": "insulated",
+          "t": "bool"
+        },
+        {
+          "n": "squareSprite",
+          "t": "bool"
+        },
+        {
+          "n": "absorbLasers",
+          "t": "bool"
+        },
+        {
+          "n": "enableDrawStatus",
+          "t": "bool"
+        },
+        {
+          "n": "drawDisabled",
+          "t": "bool"
+        },
+        {
+          "n": "autoResetEnabled",
+          "t": "bool"
+        },
+        {
+          "n": "noUpdateDisabled",
+          "t": "bool"
+        },
+        {
+          "n": "updateInUnits",
+          "t": "bool"
+        },
+        {
+          "n": "alwaysUpdateInUnits",
+          "t": "bool"
+        },
+        {
+          "n": "canPickup",
+          "t": "bool"
+        },
+        {
+          "n": "deconstructDropAllLiquid",
+          "t": "bool"
+        },
+        {
+          "n": "useColor",
+          "t": "bool"
+        },
+        {
+          "n": "itemDrop",
+          "t": "content"
+        },
+        {
+          "n": "playerUnmineable",
+          "t": "bool"
+        },
+        {
+          "n": "scaledHealth",
+          "t": "number"
+        },
+        {
+          "n": "health",
+          "t": "number"
+        },
+        {
+          "n": "armor",
+          "t": "number"
+        },
+        {
+          "n": "baseExplosiveness",
+          "t": "number"
+        },
+        {
+          "n": "explosivenessScale",
+          "t": "number"
+        },
+        {
+          "n": "flammabilityScale",
+          "t": "number"
+        },
+        {
+          "n": "baseShake",
+          "t": "number"
+        },
+        {
+          "n": "destroyBullet",
+          "t": "content"
+        },
+        {
+          "n": "destroyBulletSameTeam",
+          "t": "bool"
+        },
+        {
+          "n": "lightLiquid",
+          "t": "content"
+        },
+        {
+          "n": "drawCracks",
+          "t": "bool"
+        },
+        {
+          "n": "createRubble",
+          "t": "bool"
+        },
+        {
+          "n": "floating",
+          "t": "bool"
+        },
+        {
+          "n": "size",
+          "t": "number"
+        },
+        {
+          "n": "offset",
+          "t": "number"
+        },
+        {
+          "n": "sizeOffset",
+          "t": "number"
+        },
+        {
+          "n": "clipSize",
+          "t": "number"
+        },
+        {
+          "n": "lightClipSize",
+          "t": "number"
+        },
+        {
+          "n": "placeOverlapRange",
+          "t": "number"
+        },
+        {
+          "n": "crushDamageMultiplier",
+          "t": "number"
+        },
+        {
+          "n": "crushFragile",
+          "t": "bool"
+        },
+        {
+          "n": "timers",
+          "t": "number"
+        },
+        {
+          "n": "cacheLayer",
+          "t": "raw"
+        },
+        {
+          "n": "drawDynamic",
+          "t": "bool"
+        },
+        {
+          "n": "drawCached",
+          "t": "bool"
+        },
+        {
+          "n": "buildingCacheLayer",
+          "t": "raw"
+        },
+        {
+          "n": "fillsTile",
+          "t": "bool"
+        },
+        {
+          "n": "forceDark",
+          "t": "bool"
+        },
+        {
+          "n": "alwaysReplace",
+          "t": "bool"
+        },
+        {
+          "n": "replaceable",
+          "t": "bool"
+        },
+        {
+          "n": "group",
+          "t": "raw"
+        },
+        {
+          "n": "priority",
+          "t": "number"
+        },
+        {
+          "n": "unitCapModifier",
+          "t": "number"
+        },
+        {
+          "n": "configurable",
+          "t": "bool"
+        },
+        {
+          "n": "configureSound",
+          "t": "raw"
+        },
+        {
+          "n": "ignoreResizeConfig",
+          "t": "bool"
+        },
+        {
+          "n": "commandable",
+          "t": "bool"
+        },
+        {
+          "n": "allowConfigInventory",
+          "t": "bool"
+        },
+        {
+          "n": "diagonalConfigInventory",
+          "t": "bool"
+        },
+        {
+          "n": "selectionRows",
+          "t": "number"
+        },
+        {
+          "n": "logicConfigurable",
+          "t": "bool"
+        },
+        {
+          "n": "delayLandingConfig",
+          "t": "bool"
+        },
+        {
+          "n": "consumesTap",
+          "t": "bool"
+        },
+        {
+          "n": "drawLiquidLight",
+          "t": "bool"
+        },
+        {
+          "n": "envRequired",
+          "t": "number"
+        },
+        {
+          "n": "envEnabled",
+          "t": "number"
+        },
+        {
+          "n": "envDisabled",
+          "t": "number"
+        },
+        {
+          "n": "sync",
+          "t": "bool"
+        },
+        {
+          "n": "conveyorPlacement",
+          "t": "bool"
+        },
+        {
+          "n": "allowDiagonal",
+          "t": "bool"
+        },
+        {
+          "n": "swapDiagonalPlacement",
+          "t": "bool"
+        },
+        {
+          "n": "allowRectanglePlacement",
+          "t": "bool"
+        },
+        {
+          "n": "schematicPriority",
+          "t": "number"
+        },
+        {
+          "n": "hasColor",
+          "t": "bool"
+        },
+        {
+          "n": "targetable",
+          "t": "bool"
+        },
+        {
+          "n": "attacks",
+          "t": "bool"
+        },
+        {
+          "n": "suppressable",
+          "t": "bool"
+        },
+        {
+          "n": "canOverdrive",
+          "t": "bool"
+        },
+        {
+          "n": "outlineIcon",
+          "t": "bool"
+        },
+        {
+          "n": "outlineRadius",
+          "t": "number"
+        },
+        {
+          "n": "outlinedIcon",
+          "t": "number"
+        },
+        {
+          "n": "hasShadow",
+          "t": "bool"
+        },
+        {
+          "n": "customShadow",
+          "t": "bool"
+        },
+        {
+          "n": "placePitchChange",
+          "t": "bool"
+        },
+        {
+          "n": "breakPitchChange",
+          "t": "bool"
+        },
+        {
+          "n": "placeSound",
+          "t": "raw"
+        },
+        {
+          "n": "breakSound",
+          "t": "raw"
+        },
+        {
+          "n": "destroySound",
+          "t": "raw"
+        },
+        {
+          "n": "destroySoundVolume",
+          "t": "number"
+        },
+        {
+          "n": "destroyPitchMin",
+          "t": "number"
+        },
+        {
+          "n": "albedo",
+          "t": "number"
+        },
+        {
+          "n": "emitLight",
+          "t": "bool"
+        },
+        {
+          "n": "obstructsLight",
+          "t": "bool"
+        },
+        {
+          "n": "lightRadius",
+          "t": "number"
+        },
+        {
+          "n": "fogRadius",
+          "t": "number"
+        },
+        {
+          "n": "ambientSound",
+          "t": "raw"
+        },
+        {
+          "n": "ambientSoundVolume",
+          "t": "number"
+        },
+        {
+          "n": "requirements",
+          "t": "stack[]:item"
+        },
+        {
+          "n": "category",
+          "t": "raw"
+        },
+        {
+          "n": "buildTime",
+          "t": "number"
+        },
+        {
+          "n": "buildVisibility",
+          "t": "raw"
+        },
+        {
+          "n": "buildCostMultiplier",
+          "t": "number"
+        },
+        {
+          "n": "deconstructThreshold",
+          "t": "number"
+        },
+        {
+          "n": "instantDeconstruct",
+          "t": "bool"
+        },
+        {
+          "n": "instantBuild",
+          "t": "bool"
+        },
+        {
+          "n": "ignoreBuildDarkness",
+          "t": "bool"
+        },
+        {
+          "n": "placeEffect",
+          "t": "raw"
+        },
+        {
+          "n": "breakEffect",
+          "t": "raw"
+        },
+        {
+          "n": "destroyEffect",
+          "t": "raw"
+        },
+        {
+          "n": "researchCostMultiplier",
+          "t": "number"
+        },
+        {
+          "n": "researchCost",
+          "t": "stack[]:item"
+        },
+        {
+          "n": "forceTeam",
+          "t": "raw"
+        },
+        {
+          "n": "instantTransfer",
+          "t": "bool"
+        },
+        {
+          "n": "maxConsecutive",
+          "t": "number"
+        },
+        {
+          "n": "quickRotate",
+          "t": "bool"
+        },
+        {
+          "n": "allowDerelictRepair",
+          "t": "bool"
+        },
+        {
+          "n": "subclass",
+          "t": "raw"
+        },
+        {
+          "n": "selectScroll",
+          "t": "number"
+        },
+        {
+          "n": "buildType",
+          "t": "raw"
+        },
+        {
+          "n": "itemFilter",
+          "t": "raw"
+        },
+        {
+          "n": "consumers",
+          "t": "raw"
+        },
+        {
+          "n": "hasConsumers",
+          "t": "bool"
+        },
+        {
+          "n": "consPower",
+          "t": "raw"
+        },
+        {
+          "n": "regionRotated1",
+          "t": "number"
+        },
+        {
+          "n": "region",
+          "t": "raw"
+        },
+        {
+          "n": "variantShadowRegions",
+          "t": "raw"
+        },
+        {
+          "n": "dumpTime",
+          "t": "number"
+        }
+      ]
+    },
+    "Accelerator": {
+      "extends": "Block",
+      "ctype": "block",
+      "file": "C:/Users/XN325/Desktop/mindustry/Mindustry-160.5/core/src/mindustry/world/blocks/campaign/Accelerator.java",
+      "fields": [
+        {
+          "n": "launchBlock",
+          "t": "content"
+        },
+        {
+          "n": "powerBufferRequirement",
+          "t": "number"
+        },
+        {
+          "n": "launchCandidates",
+          "t": "raw"
+        },
+        {
+          "n": "lightningSoundVolume",
+          "t": "number"
+        },
+        {
+          "n": "chargeSound",
+          "t": "raw"
+        },
+        {
+          "n": "launchSound",
+          "t": "raw"
+        },
+        {
+          "n": "constructSound",
+          "t": "raw"
+        },
+        {
+          "n": "launchDuration",
+          "t": "number"
+        },
+        {
+          "n": "chargeDuration",
+          "t": "number"
+        },
+        {
+          "n": "buildDuration",
+          "t": "number"
+        },
+        {
+          "n": "landZoomInterp",
+          "t": "raw"
+        },
+        {
+          "n": "landZoomFrom",
+          "t": "number"
+        },
+        {
+          "n": "chargeRings",
+          "t": "number"
+        },
+        {
+          "n": "ringRadBase",
+          "t": "number"
+        },
+        {
+          "n": "ringHandleTilt",
+          "t": "number"
+        },
+        {
+          "n": "ringColor",
+          "t": "color"
+        },
+        {
+          "n": "launchLightning",
+          "t": "number"
+        },
+        {
+          "n": "lightningColor",
+          "t": "color"
+        },
+        {
+          "n": "lightningDamage",
+          "t": "number"
+        },
+        {
+          "n": "lightningOffset",
+          "t": "number"
+        },
+        {
+          "n": "lightningLengthMin",
+          "t": "number"
+        },
+        {
+          "n": "lightningLaunchChance",
+          "t": "number"
+        },
+        {
+          "n": "statusLerp",
+          "t": "raw"
+        },
+        {
+          "n": "progress",
+          "t": "number"
+        },
+        {
+          "n": "launchHeat",
+          "t": "raw"
+        },
+        {
+          "n": "launching",
+          "t": "bool"
+        },
+        {
+          "n": "launchTime",
+          "t": "number"
+        }
+      ]
+    },
+    "LandingPad": {
+      "extends": "Block",
+      "ctype": "block",
+      "file": "C:/Users/XN325/Desktop/mindustry/Mindustry-160.5/core/src/mindustry/world/blocks/campaign/LandingPad.java",
+      "fields": [
+        {
+          "n": "arrivalDuration",
+          "t": "number"
+        },
+        {
+          "n": "cooldownTime",
+          "t": "number"
+        },
+        {
+          "n": "consumeLiquidAmount",
+          "t": "number"
+        },
+        {
+          "n": "consumeLiquid",
+          "t": "content"
+        },
+        {
+          "n": "landEffect",
+          "t": "raw"
+        },
+        {
+          "n": "coolingEffect",
+          "t": "raw"
+        },
+        {
+          "n": "coolingEffectChance",
+          "t": "number"
+        },
+        {
+          "n": "liquidPad",
+          "t": "number"
+        },
+        {
+          "n": "bottomColor",
+          "t": "color"
+        },
+        {
+          "n": "landSoundVolume",
+          "t": "number"
+        },
+        {
+          "n": "landSound",
+          "t": "raw"
+        },
+        {
+          "n": "config",
+          "t": "content"
+        },
+        {
+          "n": "cooldown",
+          "t": "number"
+        },
+        {
+          "n": "arrivingTimer",
+          "t": "number"
+        },
+        {
+          "n": "arriving",
+          "t": "content"
+        },
+        {
+          "n": "liquidRemoved",
+          "t": "number"
+        }
+      ]
+    },
+    "LaunchPad": {
+      "extends": "Block",
+      "ctype": "block",
+      "file": "C:/Users/XN325/Desktop/mindustry/Mindustry-160.5/core/src/mindustry/world/blocks/campaign/LaunchPad.java",
+      "fields": [
+        {
+          "n": "launchTime",
+          "t": "number"
+        },
+        {
+          "n": "launchSoundPitchRand",
+          "t": "number"
+        },
+        {
+          "n": "launchSound",
+          "t": "raw"
+        },
+        {
+          "n": "acceptMultipleItems",
+          "t": "bool"
+        },
+        {
+          "n": "lightStep",
+          "t": "number"
+        },
+        {
+          "n": "lightSteps",
+          "t": "number"
+        },
+        {
+          "n": "liquidPad",
+          "t": "number"
+        },
+        {
+          "n": "drawLiquid",
+          "t": "content"
+        },
+        {
+          "n": "bottomColor",
+          "t": "color"
+        },
+        {
+          "n": "launchCounter",
+          "t": "number"
+        }
+      ]
+    },
+    "ConstructBlock": {
+      "extends": "Block",
+      "ctype": "block",
+      "file": "C:/Users/XN325/Desktop/mindustry/Mindustry-160.5/core/src/mindustry/world/blocks/ConstructBlock.java",
+      "fields": [
+        {
+          "n": "current",
+          "t": "content"
+        },
+        {
+          "n": "previous",
+          "t": "content"
+        },
+        {
+          "n": "prevBuild",
+          "t": "raw"
+        },
+        {
+          "n": "progress",
+          "t": "number"
+        },
+        {
+          "n": "buildCost",
+          "t": "number"
+        },
+        {
+          "n": "lastConfig",
+          "t": "raw"
+        },
+        {
+          "n": "lastBuilder",
+          "t": "raw"
+        },
+        {
+          "n": "activeDeconstruct",
+          "t": "raw"
+        },
+        {
+          "n": "constructColor",
+          "t": "number"
+        }
+      ]
+    },
+    "AutoDoor": {
+      "extends": "Wall",
+      "ctype": "block",
+      "file": "C:/Users/XN325/Desktop/mindustry/Mindustry-160.5/core/src/mindustry/world/blocks/defense/AutoDoor.java",
+      "fields": [
+        {
+          "n": "checkInterval",
+          "t": "number"
+        },
+        {
+          "n": "openfx",
+          "t": "raw"
+        },
+        {
+          "n": "closefx",
+          "t": "raw"
+        },
+        {
+          "n": "doorSound",
+          "t": "raw"
+        },
+        {
+          "n": "triggerMargin",
+          "t": "number"
+        },
+        {
+          "n": "open",
+          "t": "bool"
+        }
+      ]
+    },
+    "BaseShield": {
+      "extends": "Block",
+      "ctype": "block",
+      "file": "C:/Users/XN325/Desktop/mindustry/Mindustry-160.5/core/src/mindustry/world/blocks/defense/BaseShield.java",
+      "fields": [
+        {
+          "n": "radius",
+          "t": "number"
+        },
+        {
+          "n": "sides",
+          "t": "number"
+        },
+        {
+          "n": "shieldColor",
+          "t": "color"
+        },
+        {
+          "n": "broken",
+          "t": "bool"
+        },
+        {
+          "n": "hit",
+          "t": "number"
+        },
+        {
+          "n": "smoothRadius",
+          "t": "number"
+        }
+      ]
+    },
+    "BuildTurret": {
+      "extends": "BaseTurret",
+      "ctype": "block",
+      "file": "C:/Users/XN325/Desktop/mindustry/Mindustry-160.5/core/src/mindustry/world/blocks/defense/BuildTurret.java",
+      "fields": [
+        {
+          "n": "targetInterval",
+          "t": "number"
+        },
+        {
+          "n": "buildSpeed",
+          "t": "number"
+        },
+        {
+          "n": "buildBeamOffset",
+          "t": "number"
+        },
+        {
+          "n": "unitType",
+          "t": "content"
+        },
+        {
+          "n": "elevation",
+          "t": "number"
+        },
+        {
+          "n": "following",
+          "t": "raw"
+        },
+        {
+          "n": "lastPlan",
+          "t": "raw"
+        },
+        {
+          "n": "warmup",
+          "t": "number"
+        }
+      ]
+    },
+    "Door": {
+      "extends": "Wall",
+      "ctype": "block",
+      "file": "C:/Users/XN325/Desktop/mindustry/Mindustry-160.5/core/src/mindustry/world/blocks/defense/Door.java",
+      "fields": [
+        {
+          "n": "openfx",
+          "t": "raw"
+        },
+        {
+          "n": "closefx",
+          "t": "raw"
+        },
+        {
+          "n": "doorSound",
+          "t": "raw"
+        },
+        {
+          "n": "chainEffect",
+          "t": "bool"
+        },
+        {
+          "n": "open",
+          "t": "bool"
+        }
+      ]
+    },
+    "ForceProjector": {
+      "extends": "Block",
+      "ctype": "block",
+      "file": "C:/Users/XN325/Desktop/mindustry/Mindustry-160.5/core/src/mindustry/world/blocks/defense/ForceProjector.java",
+      "fields": [
+        {
+          "n": "phaseUseTime",
+          "t": "number"
+        },
+        {
+          "n": "phaseRadiusBoost",
+          "t": "number"
+        },
+        {
+          "n": "phaseShieldBoost",
+          "t": "number"
+        },
+        {
+          "n": "radius",
+          "t": "number"
+        },
+        {
+          "n": "sides",
+          "t": "number"
+        },
+        {
+          "n": "shieldRotation",
+          "t": "number"
+        },
+        {
+          "n": "shieldHealth",
+          "t": "number"
+        },
+        {
+          "n": "cooldownNormal",
+          "t": "number"
+        },
+        {
+          "n": "cooldownLiquid",
+          "t": "number"
+        },
+        {
+          "n": "cooldownBrokenBase",
+          "t": "number"
+        },
+        {
+          "n": "coolantConsumption",
+          "t": "number"
+        },
+        {
+          "n": "consumeCoolant",
+          "t": "bool"
+        },
+        {
+          "n": "crashDamageMultiplier",
+          "t": "number"
+        },
+        {
+          "n": "breakSound",
+          "t": "raw"
+        },
+        {
+          "n": "hitSound",
+          "t": "raw"
+        },
+        {
+          "n": "hitSoundVolume",
+          "t": "number"
+        },
+        {
+          "n": "absorbEffect",
+          "t": "raw"
+        },
+        {
+          "n": "shieldBreakEffect",
+          "t": "raw"
+        },
+        {
+          "n": "forceShrinkEffect",
+          "t": "raw"
+        },
+        {
+          "n": "coolantConsumer",
+          "t": "raw"
+        },
+        {
+          "n": "broken",
+          "t": "bool"
+        },
+        {
+          "n": "phaseHeat",
+          "t": "raw"
+        }
+      ]
+    },
+    "MendProjector": {
+      "extends": "Block",
+      "ctype": "block",
+      "file": "C:/Users/XN325/Desktop/mindustry/Mindustry-160.5/core/src/mindustry/world/blocks/defense/MendProjector.java",
+      "fields": [
+        {
+          "n": "phaseColor",
+          "t": "color"
+        },
+        {
+          "n": "reload",
+          "t": "number"
+        },
+        {
+          "n": "range",
+          "t": "number"
+        },
+        {
+          "n": "healPercent",
+          "t": "number"
+        },
+        {
+          "n": "phaseBoost",
+          "t": "number"
+        },
+        {
+          "n": "phaseRangeBoost",
+          "t": "number"
+        },
+        {
+          "n": "useTime",
+          "t": "number"
+        },
+        {
+          "n": "mendSound",
+          "t": "raw"
+        },
+        {
+          "n": "mendSoundVolume",
+          "t": "number"
+        }
+      ]
+    },
+    "OverdriveProjector": {
+      "extends": "Block",
+      "ctype": "block",
+      "file": "C:/Users/XN325/Desktop/mindustry/Mindustry-160.5/core/src/mindustry/world/blocks/defense/OverdriveProjector.java",
+      "fields": [
+        {
+          "n": "reload",
+          "t": "number"
+        },
+        {
+          "n": "range",
+          "t": "number"
+        },
+        {
+          "n": "speedBoost",
+          "t": "number"
+        },
+        {
+          "n": "speedBoostPhase",
+          "t": "number"
+        },
+        {
+          "n": "useTime",
+          "t": "number"
+        },
+        {
+          "n": "phaseRangeBoost",
+          "t": "number"
+        },
+        {
+          "n": "hasBoost",
+          "t": "bool"
+        }
+      ]
+    },
+    "Radar": {
+      "extends": "Block",
+      "ctype": "block",
+      "file": "C:/Users/XN325/Desktop/mindustry/Mindustry-160.5/core/src/mindustry/world/blocks/defense/Radar.java",
+      "fields": [
+        {
+          "n": "discoveryTime",
+          "t": "number"
+        },
+        {
+          "n": "rotateSpeed",
+          "t": "number"
+        },
+        {
+          "n": "glowColor",
+          "t": "color"
+        },
+        {
+          "n": "glowScl",
+          "t": "number"
+        },
+        {
+          "n": "progress",
+          "t": "number"
+        },
+        {
+          "n": "lastRadius",
+          "t": "number"
+        },
+        {
+          "n": "smoothEfficiency",
+          "t": "number"
+        },
+        {
+          "n": "totalProgress",
+          "t": "number"
+        }
+      ]
+    },
+    "RegenProjector": {
+      "extends": "Block",
+      "ctype": "block",
+      "file": "C:/Users/XN325/Desktop/mindustry/Mindustry-160.5/core/src/mindustry/world/blocks/defense/RegenProjector.java",
+      "fields": [
+        {
+          "n": "range",
+          "t": "number"
+        },
+        {
+          "n": "healPercent",
+          "t": "number"
+        },
+        {
+          "n": "optionalMultiplier",
+          "t": "number"
+        },
+        {
+          "n": "optionalUseTime",
+          "t": "number"
+        },
+        {
+          "n": "effectChance",
+          "t": "number"
+        },
+        {
+          "n": "baseColor",
+          "t": "color"
+        },
+        {
+          "n": "effect",
+          "t": "raw"
+        },
+        {
+          "n": "lastChange",
+          "t": "number"
+        },
+        {
+          "n": "optionalTimer",
+          "t": "raw"
+        },
+        {
+          "n": "anyTargets",
+          "t": "bool"
+        },
+        {
+          "n": "didRegen",
+          "t": "bool"
+        }
+      ]
+    },
+    "ShieldWall": {
+      "extends": "Wall",
+      "ctype": "block",
+      "file": "C:/Users/XN325/Desktop/mindustry/Mindustry-160.5/core/src/mindustry/world/blocks/defense/ShieldWall.java",
+      "fields": [
+        {
+          "n": "shieldHealth",
+          "t": "number"
+        },
+        {
+          "n": "breakCooldown",
+          "t": "number"
+        },
+        {
+          "n": "regenSpeed",
+          "t": "number"
+        },
+        {
+          "n": "glowMag",
+          "t": "number"
+        },
+        {
+          "n": "shield",
+          "t": "number"
+        },
+        {
+          "n": "breakTimer",
+          "t": "number"
+        }
+      ]
+    },
+    "ShockMine": {
+      "extends": "Block",
+      "ctype": "block",
+      "file": "C:/Users/XN325/Desktop/mindustry/Mindustry-160.5/core/src/mindustry/world/blocks/defense/ShockMine.java",
+      "fields": [
+        {
+          "n": "cooldown",
+          "t": "number"
+        },
+        {
+          "n": "tileDamage",
+          "t": "number"
+        },
+        {
+          "n": "damage",
+          "t": "number"
+        },
+        {
+          "n": "length",
+          "t": "number"
+        },
+        {
+          "n": "tendrils",
+          "t": "number"
+        },
+        {
+          "n": "lightningColor",
+          "t": "color"
+        },
+        {
+          "n": "shots",
+          "t": "number"
+        },
+        {
+          "n": "inaccuracy",
+          "t": "number"
+        },
+        {
+          "n": "bullet",
+          "t": "content"
+        },
+        {
+          "n": "teamAlpha",
+          "t": "number"
+        }
+      ]
+    },
+    "ShockwaveTower": {
+      "extends": "Block",
+      "ctype": "block",
+      "file": "C:/Users/XN325/Desktop/mindustry/Mindustry-160.5/core/src/mindustry/world/blocks/defense/ShockwaveTower.java",
+      "fields": [
+        {
+          "n": "timerCheck",
+          "t": "number"
+        },
+        {
+          "n": "range",
+          "t": "number"
+        },
+        {
+          "n": "reload",
+          "t": "number"
+        },
+        {
+          "n": "bulletDamage",
+          "t": "number"
+        },
+        {
+          "n": "falloffCount",
+          "t": "number"
+        },
+        {
+          "n": "shake",
+          "t": "number"
+        },
+        {
+          "n": "checkInterval",
+          "t": "number"
+        },
+        {
+          "n": "shootSound",
+          "t": "raw"
+        },
+        {
+          "n": "cooldownMultiplier",
+          "t": "number"
+        },
+        {
+          "n": "hitEffect",
+          "t": "raw"
+        },
+        {
+          "n": "waveEffect",
+          "t": "raw"
+        },
+        {
+          "n": "shapeRotateSpeed",
+          "t": "number"
+        },
+        {
+          "n": "shapeSides",
+          "t": "number"
+        },
+        {
+          "n": "heat",
+          "t": "number"
+        }
+      ]
+    },
+    "TargetDummy": {
+      "extends": "Block",
+      "ctype": "block",
+      "file": "C:/Users/XN325/Desktop/mindustry/Mindustry-160.5/core/src/mindustry/world/blocks/defense/TargetDummy.java",
+      "fields": [
+        {
+          "n": "unitType",
+          "t": "content"
+        },
+        {
+          "n": "pullScale",
+          "t": "number"
+        },
+        {
+          "n": "emptyStr",
+          "t": "text"
+        },
+        {
+          "n": "readUnitId",
+          "t": "number"
+        },
+        {
+          "n": "unit",
+          "t": "raw"
+        },
+        {
+          "n": "resetTime",
+          "t": "number"
+        },
+        {
+          "n": "reset",
+          "t": "raw"
+        },
+        {
+          "n": "timeDisplay",
+          "t": "raw"
+        },
+        {
+          "n": "hits",
+          "t": "number"
+        },
+        {
+          "n": "hitsDisplay",
+          "t": "number"
+        },
+        {
+          "n": "boosting",
+          "t": "bool"
+        },
+        {
+          "n": "unitArmor",
+          "t": "number"
+        },
+        {
+          "n": "unitTeam",
+          "t": "raw"
+        }
+      ]
+    },
+    "Thruster": {
+      "extends": "Wall",
+      "ctype": "block",
+      "file": "C:/Users/XN325/Desktop/mindustry/Mindustry-160.5/core/src/mindustry/world/blocks/defense/Thruster.java",
+      "fields": []
+    },
+    "BaseTurret": {
+      "extends": "Block",
+      "ctype": "block",
+      "file": "C:/Users/XN325/Desktop/mindustry/Mindustry-160.5/core/src/mindustry/world/blocks/defense/turrets/BaseTurret.java",
+      "fields": [
+        {
+          "n": "range",
+          "t": "number"
+        },
+        {
+          "n": "placeOverlapMargin",
+          "t": "number"
+        },
+        {
+          "n": "rotateSpeed",
+          "t": "number"
+        },
+        {
+          "n": "fogRadiusMultiplier",
+          "t": "number"
+        },
+        {
+          "n": "disableOverlapCheck",
+          "t": "bool"
+        },
+        {
+          "n": "activationTime",
+          "t": "number"
+        },
+        {
+          "n": "coolEffect",
+          "t": "raw"
+        },
+        {
+          "n": "coolantMultiplier",
+          "t": "number"
+        },
+        {
+          "n": "coolant",
+          "t": "raw"
+        },
+        {
+          "n": "rotation",
+          "t": "number"
+        },
+        {
+          "n": "activationTimer",
+          "t": "number"
+        }
+      ]
+    },
+    "ContinuousLiquidTurret": {
+      "extends": "ContinuousTurret",
+      "ctype": "block",
+      "file": "C:/Users/XN325/Desktop/mindustry/Mindustry-160.5/core/src/mindustry/world/blocks/defense/turrets/ContinuousLiquidTurret.java",
+      "fields": [
+        {
+          "n": "liquidConsumed",
+          "t": "number"
+        }
+      ]
+    },
+    "ContinuousTurret": {
+      "extends": "Turret",
+      "ctype": "block",
+      "file": "C:/Users/XN325/Desktop/mindustry/Mindustry-160.5/core/src/mindustry/world/blocks/defense/turrets/ContinuousTurret.java",
+      "fields": [
+        {
+          "n": "shootType",
+          "t": "content"
+        },
+        {
+          "n": "aimChangeSpeed",
+          "t": "number"
+        },
+        {
+          "n": "scaleDamageEfficiency",
+          "t": "bool"
+        },
+        {
+          "n": "lastLength",
+          "t": "number"
+        }
+      ]
+    },
+    "ItemTurret": {
+      "extends": "Turret",
+      "ctype": "block",
+      "file": "C:/Users/XN325/Desktop/mindustry/Mindustry-160.5/core/src/mindustry/world/blocks/defense/turrets/ItemTurret.java",
+      "fields": [
+        {
+          "n": "item",
+          "t": "content"
+        }
+      ]
+    },
+    "LaserTurret": {
+      "extends": "PowerTurret",
+      "ctype": "block",
+      "file": "C:/Users/XN325/Desktop/mindustry/Mindustry-160.5/core/src/mindustry/world/blocks/defense/turrets/LaserTurret.java",
+      "fields": [
+        {
+          "n": "firingMoveFract",
+          "t": "number"
+        },
+        {
+          "n": "shootDuration",
+          "t": "number"
+        }
+      ]
+    },
+    "LiquidTurret": {
+      "extends": "Turret",
+      "ctype": "block",
+      "file": "C:/Users/XN325/Desktop/mindustry/Mindustry-160.5/core/src/mindustry/world/blocks/defense/turrets/LiquidTurret.java",
+      "fields": [
+        {
+          "n": "extinguish",
+          "t": "bool"
+        }
+      ]
+    },
+    "PayloadAmmoTurret": {
+      "extends": "Turret",
+      "ctype": "block",
+      "file": "C:/Users/XN325/Desktop/mindustry/Mindustry-160.5/core/src/mindustry/world/blocks/defense/turrets/PayloadAmmoTurret.java",
+      "fields": []
+    },
+    "PointDefenseTurret": {
+      "extends": "ReloadTurret",
+      "ctype": "block",
+      "file": "C:/Users/XN325/Desktop/mindustry/Mindustry-160.5/core/src/mindustry/world/blocks/defense/turrets/PointDefenseTurret.java",
+      "fields": [
+        {
+          "n": "retargetTime",
+          "t": "number"
+        },
+        {
+          "n": "color",
+          "t": "color"
+        },
+        {
+          "n": "beamEffect",
+          "t": "raw"
+        },
+        {
+          "n": "hitEffect",
+          "t": "raw"
+        },
+        {
+          "n": "shootEffect",
+          "t": "raw"
+        },
+        {
+          "n": "shootSound",
+          "t": "raw"
+        },
+        {
+          "n": "shootCone",
+          "t": "number"
+        },
+        {
+          "n": "bulletDamage",
+          "t": "number"
+        },
+        {
+          "n": "shootLength",
+          "t": "number"
+        },
+        {
+          "n": "target",
+          "t": "raw"
+        }
+      ]
+    },
+    "PowerTurret": {
+      "extends": "Turret",
+      "ctype": "block",
+      "file": "C:/Users/XN325/Desktop/mindustry/Mindustry-160.5/core/src/mindustry/world/blocks/defense/turrets/PowerTurret.java",
+      "fields": [
+        {
+          "n": "shootType",
+          "t": "content"
+        }
+      ]
+    },
+    "ReloadTurret": {
+      "extends": "BaseTurret",
+      "ctype": "block",
+      "file": "C:/Users/XN325/Desktop/mindustry/Mindustry-160.5/core/src/mindustry/world/blocks/defense/turrets/ReloadTurret.java",
+      "fields": [
+        {
+          "n": "reload",
+          "t": "number"
+        },
+        {
+          "n": "reloadCounter",
+          "t": "number"
+        }
+      ]
+    },
+    "TractorBeamTurret": {
+      "extends": "BaseTurret",
+      "ctype": "block",
+      "file": "C:/Users/XN325/Desktop/mindustry/Mindustry-160.5/core/src/mindustry/world/blocks/defense/turrets/TractorBeamTurret.java",
+      "fields": [
+        {
+          "n": "retargetTime",
+          "t": "number"
+        },
+        {
+          "n": "shootCone",
+          "t": "number"
+        },
+        {
+          "n": "shootLength",
+          "t": "number"
+        },
+        {
+          "n": "laserWidth",
+          "t": "number"
+        },
+        {
+          "n": "force",
+          "t": "number"
+        },
+        {
+          "n": "scaledForce",
+          "t": "number"
+        },
+        {
+          "n": "damage",
+          "t": "number"
+        },
+        {
+          "n": "targetAir",
+          "t": "bool"
+        },
+        {
+          "n": "laserColor",
+          "t": "color"
+        },
+        {
+          "n": "status",
+          "t": "content"
+        },
+        {
+          "n": "statusDuration",
+          "t": "number"
+        },
+        {
+          "n": "statusChance",
+          "t": "number"
+        },
+        {
+          "n": "shootSound",
+          "t": "raw"
+        },
+        {
+          "n": "shootSoundVolume",
+          "t": "number"
+        },
+        {
+          "n": "target",
+          "t": "raw"
+        },
+        {
+          "n": "strength",
+          "t": "raw"
+        },
+        {
+          "n": "any",
+          "t": "bool"
+        },
+        {
+          "n": "coolantMultiplier",
+          "t": "number"
+        }
+      ]
+    },
+    "Turret": {
+      "extends": "ReloadTurret",
+      "ctype": "block",
+      "file": "C:/Users/XN325/Desktop/mindustry/Mindustry-160.5/core/src/mindustry/world/blocks/defense/turrets/Turret.java",
+      "fields": [
+        {
+          "n": "targetInterval",
+          "t": "number"
+        },
+        {
+          "n": "newTargetInterval",
+          "t": "number"
+        },
+        {
+          "n": "maxAmmo",
+          "t": "number"
+        },
+        {
+          "n": "ammoPerShot",
+          "t": "number"
+        },
+        {
+          "n": "consumeAmmoOnce",
+          "t": "bool"
+        },
+        {
+          "n": "heatRequirement",
+          "t": "number"
+        },
+        {
+          "n": "maxHeatEfficiency",
+          "t": "number"
+        },
+        {
+          "n": "inaccuracy",
+          "t": "number"
+        },
+        {
+          "n": "velocityRnd",
+          "t": "number"
+        },
+        {
+          "n": "extraVelocity",
+          "t": "number"
+        },
+        {
+          "n": "lifeRnd",
+          "t": "number"
+        },
+        {
+          "n": "extraLife",
+          "t": "number"
+        },
+        {
+          "n": "scaleLifetimeOffset",
+          "t": "number"
+        },
+        {
+          "n": "shootCone",
+          "t": "number"
+        },
+        {
+          "n": "shootX",
+          "t": "number"
+        },
+        {
+          "n": "xRand",
+          "t": "number"
+        },
+        {
+          "n": "drawMinRange",
+          "t": "bool"
+        },
+        {
+          "n": "trackingRange",
+          "t": "number"
+        },
+        {
+          "n": "minRange",
+          "t": "number"
+        },
+        {
+          "n": "minWarmup",
+          "t": "number"
+        },
+        {
+          "n": "accurateDelay",
+          "t": "bool"
+        },
+        {
+          "n": "moveWhileCharging",
+          "t": "bool"
+        },
+        {
+          "n": "reloadWhileCharging",
+          "t": "bool"
+        },
+        {
+          "n": "warmupMaintainTime",
+          "t": "number"
+        },
+        {
+          "n": "targetAir",
+          "t": "bool"
+        },
+        {
+          "n": "targetGround",
+          "t": "bool"
+        },
+        {
+          "n": "targetBlocks",
+          "t": "bool"
+        },
+        {
+          "n": "targetHealing",
+          "t": "bool"
+        },
+        {
+          "n": "playerControllable",
+          "t": "bool"
+        },
+        {
+          "n": "displayAmmoMultiplier",
+          "t": "bool"
+        },
+        {
+          "n": "targetUnderBlocks",
+          "t": "bool"
+        },
+        {
+          "n": "alwaysShooting",
+          "t": "bool"
+        },
+        {
+          "n": "predictTarget",
+          "t": "bool"
+        },
+        {
+          "n": "unitSort",
+          "t": "raw"
+        },
+        {
+          "n": "unitFilter",
+          "t": "raw"
+        },
+        {
+          "n": "buildingFilter",
+          "t": "raw"
+        },
+        {
+          "n": "heatColor",
+          "t": "color"
+        },
+        {
+          "n": "shootEffect",
+          "t": "raw"
+        },
+        {
+          "n": "smokeEffect",
+          "t": "raw"
+        },
+        {
+          "n": "ammoUseEffect",
+          "t": "raw"
+        },
+        {
+          "n": "shootSound",
+          "t": "raw"
+        },
+        {
+          "n": "shootSoundVolume",
+          "t": "number"
+        },
+        {
+          "n": "chargeSound",
+          "t": "raw"
+        },
+        {
+          "n": "loopSound",
+          "t": "raw"
+        },
+        {
+          "n": "loopSoundVolume",
+          "t": "number"
+        },
+        {
+          "n": "soundPitchMin",
+          "t": "number"
+        },
+        {
+          "n": "ammoEjectBack",
+          "t": "number"
+        },
+        {
+          "n": "shootWarmupSpeed",
+          "t": "number"
+        },
+        {
+          "n": "linearWarmup",
+          "t": "bool"
+        },
+        {
+          "n": "recoil",
+          "t": "number"
+        },
+        {
+          "n": "recoils",
+          "t": "number"
+        },
+        {
+          "n": "recoilTime",
+          "t": "number"
+        },
+        {
+          "n": "recoilPow",
+          "t": "number"
+        },
+        {
+          "n": "cooldownTime",
+          "t": "number"
+        },
+        {
+          "n": "elevation",
+          "t": "number"
+        },
+        {
+          "n": "shake",
+          "t": "number"
+        },
+        {
+          "n": "amount",
+          "t": "number"
+        },
+        {
+          "n": "totalAmmo",
+          "t": "number"
+        },
+        {
+          "n": "logicControlTime",
+          "t": "raw"
+        },
+        {
+          "n": "curRecoils",
+          "t": "raw"
+        },
+        {
+          "n": "warmupHold",
+          "t": "raw"
+        },
+        {
+          "n": "barrelCounter",
+          "t": "raw"
+        },
+        {
+          "n": "logicShooting",
+          "t": "bool"
+        },
+        {
+          "n": "target",
+          "t": "raw"
+        },
+        {
+          "n": "isShooting",
+          "t": "raw"
+        },
+        {
+          "n": "queuedBullets",
+          "t": "number"
+        },
+        {
+          "n": "heatReq",
+          "t": "number"
+        },
+        {
+          "n": "sideHeat",
+          "t": "raw"
+        },
+        {
+          "n": "bullet",
+          "t": "raw"
+        },
+        {
+          "n": "life",
+          "t": "raw"
+        }
+      ]
+    },
+    "Wall": {
+      "extends": "Block",
+      "ctype": "block",
+      "file": "C:/Users/XN325/Desktop/mindustry/Mindustry-160.5/core/src/mindustry/world/blocks/defense/Wall.java",
+      "fields": [
+        {
+          "n": "lightningChance",
+          "t": "number"
+        },
+        {
+          "n": "lightningDamage",
+          "t": "number"
+        },
+        {
+          "n": "lightningLength",
+          "t": "number"
+        },
+        {
+          "n": "lightningColor",
+          "t": "color"
+        },
+        {
+          "n": "lightningSound",
+          "t": "raw"
+        },
+        {
+          "n": "chanceDeflect",
+          "t": "number"
+        },
+        {
+          "n": "flashHit",
+          "t": "bool"
+        },
+        {
+          "n": "flashColor",
+          "t": "color"
+        },
+        {
+          "n": "deflectSound",
+          "t": "raw"
+        },
+        {
+          "n": "autotile",
+          "t": "bool"
+        }
+      ]
+    },
+    "ArmoredConveyor": {
+      "extends": "Conveyor",
+      "ctype": "block",
+      "file": "C:/Users/XN325/Desktop/mindustry/Mindustry-160.5/core/src/mindustry/world/blocks/distribution/ArmoredConveyor.java",
+      "fields": []
+    },
+    "BufferedItemBridge": {
+      "extends": "ItemBridge",
+      "ctype": "block",
+      "file": "C:/Users/XN325/Desktop/mindustry/Mindustry-160.5/core/src/mindustry/world/blocks/distribution/BufferedItemBridge.java",
+      "fields": [
+        {
+          "n": "speed",
+          "t": "number"
+        },
+        {
+          "n": "bufferCapacity",
+          "t": "number"
+        },
+        {
+          "n": "displayedSpeed",
+          "t": "number"
+        }
+      ]
+    },
+    "Conveyor": {
+      "extends": "Block",
+      "ctype": "block",
+      "file": "C:/Users/XN325/Desktop/mindustry/Mindustry-160.5/core/src/mindustry/world/blocks/distribution/Conveyor.java",
+      "fields": [
+        {
+          "n": "speed",
+          "t": "number"
+        },
+        {
+          "n": "displayedSpeed",
+          "t": "number"
+        },
+        {
+          "n": "pushUnits",
+          "t": "bool"
+        },
+        {
+          "n": "bridgeReplacement",
+          "t": "raw"
+        },
+        {
+          "n": "ids",
+          "t": "raw"
+        },
+        {
+          "n": "xs",
+          "t": "raw"
+        },
+        {
+          "n": "len",
+          "t": "number"
+        },
+        {
+          "n": "next",
+          "t": "raw"
+        },
+        {
+          "n": "nextc",
+          "t": "raw"
+        },
+        {
+          "n": "aligned",
+          "t": "bool"
+        },
+        {
+          "n": "mid",
+          "t": "raw"
+        },
+        {
+          "n": "minitem",
+          "t": "number"
+        },
+        {
+          "n": "blending",
+          "t": "raw"
+        },
+        {
+          "n": "blendsclx",
+          "t": "number"
+        },
+        {
+          "n": "clogHeat",
+          "t": "number"
+        }
+      ]
+    },
+    "DirectionalUnloader": {
+      "extends": "Block",
+      "ctype": "block",
+      "file": "C:/Users/XN325/Desktop/mindustry/Mindustry-160.5/core/src/mindustry/world/blocks/distribution/DirectionalUnloader.java",
+      "fields": [
+        {
+          "n": "speed",
+          "t": "number"
+        },
+        {
+          "n": "allowCoreUnload",
+          "t": "bool"
+        },
+        {
+          "n": "unloadTimer",
+          "t": "number"
+        },
+        {
+          "n": "unloadItem",
+          "t": "content"
+        },
+        {
+          "n": "offset",
+          "t": "number"
+        }
+      ]
+    },
+    "DirectionBridge": {
+      "extends": "Block",
+      "ctype": "block",
+      "file": "C:/Users/XN325/Desktop/mindustry/Mindustry-160.5/core/src/mindustry/world/blocks/distribution/DirectionBridge.java",
+      "fields": [
+        {
+          "n": "range",
+          "t": "number"
+        },
+        {
+          "n": "occupied",
+          "t": "raw"
+        },
+        {
+          "n": "lastLink",
+          "t": "raw"
+        }
+      ]
+    },
+    "DirectionLiquidBridge": {
+      "extends": "DirectionBridge",
+      "ctype": "block",
+      "file": "C:/Users/XN325/Desktop/mindustry/Mindustry-160.5/core/src/mindustry/world/blocks/distribution/DirectionLiquidBridge.java",
+      "fields": [
+        {
+          "n": "speed",
+          "t": "number"
+        },
+        {
+          "n": "liquidPadding",
+          "t": "number"
+        }
+      ]
+    },
+    "Duct": {
+      "extends": "Block",
+      "ctype": "block",
+      "file": "C:/Users/XN325/Desktop/mindustry/Mindustry-160.5/core/src/mindustry/world/blocks/distribution/Duct.java",
+      "fields": [
+        {
+          "n": "speed",
+          "t": "number"
+        },
+        {
+          "n": "armored",
+          "t": "bool"
+        },
+        {
+          "n": "junctionReplacement",
+          "t": "raw"
+        },
+        {
+          "n": "progress",
+          "t": "number"
+        },
+        {
+          "n": "current",
+          "t": "content"
+        },
+        {
+          "n": "recDir",
+          "t": "number"
+        },
+        {
+          "n": "blending",
+          "t": "raw"
+        },
+        {
+          "n": "prev",
+          "t": "raw"
+        },
+        {
+          "n": "nextc",
+          "t": "raw"
+        },
+        {
+          "n": "backCapped",
+          "t": "raw"
+        }
+      ]
+    },
+    "DuctBridge": {
+      "extends": "DirectionBridge",
+      "ctype": "block",
+      "file": "C:/Users/XN325/Desktop/mindustry/Mindustry-160.5/core/src/mindustry/world/blocks/distribution/DuctBridge.java",
+      "fields": [
+        {
+          "n": "speed",
+          "t": "number"
+        },
+        {
+          "n": "progress",
+          "t": "number"
+        }
+      ]
+    },
+    "DuctJunction": {
+      "extends": "Block",
+      "ctype": "block",
+      "file": "C:/Users/XN325/Desktop/mindustry/Mindustry-160.5/core/src/mindustry/world/blocks/distribution/DuctJunction.java",
+      "fields": [
+        {
+          "n": "speed",
+          "t": "number"
+        }
+      ]
+    },
+    "DuctRouter": {
+      "extends": "Block",
+      "ctype": "block",
+      "file": "C:/Users/XN325/Desktop/mindustry/Mindustry-160.5/core/src/mindustry/world/blocks/distribution/DuctRouter.java",
+      "fields": [
+        {
+          "n": "speed",
+          "t": "number"
+        },
+        {
+          "n": "sortItem",
+          "t": "content"
+        },
+        {
+          "n": "progress",
+          "t": "number"
+        },
+        {
+          "n": "current",
+          "t": "content"
+        }
+      ]
+    },
+    "ItemBridge": {
+      "extends": "Block",
+      "ctype": "block",
+      "file": "C:/Users/XN325/Desktop/mindustry/Mindustry-160.5/core/src/mindustry/world/blocks/distribution/ItemBridge.java",
+      "fields": [
+        {
+          "n": "range",
+          "t": "number"
+        },
+        {
+          "n": "transportTime",
+          "t": "number"
+        },
+        {
+          "n": "fadeIn",
+          "t": "bool"
+        },
+        {
+          "n": "moveArrows",
+          "t": "bool"
+        },
+        {
+          "n": "pulse",
+          "t": "bool"
+        },
+        {
+          "n": "linkSameType",
+          "t": "bool"
+        },
+        {
+          "n": "arrowSpacing",
+          "t": "number"
+        },
+        {
+          "n": "arrowTimeScl",
+          "t": "number"
+        },
+        {
+          "n": "bridgeWidth",
+          "t": "number"
+        },
+        {
+          "n": "noAcceptDisabled",
+          "t": "bool"
+        },
+        {
+          "n": "lastBuild",
+          "t": "raw"
+        },
+        {
+          "n": "link",
+          "t": "number"
+        },
+        {
+          "n": "warmup",
+          "t": "number"
+        },
+        {
+          "n": "time",
+          "t": "number"
+        },
+        {
+          "n": "hadValidLink",
+          "t": "raw"
+        },
+        {
+          "n": "transportCounter",
+          "t": "number"
+        }
+      ]
+    },
+    "Junction": {
+      "extends": "Block",
+      "ctype": "block",
+      "file": "C:/Users/XN325/Desktop/mindustry/Mindustry-160.5/core/src/mindustry/world/blocks/distribution/Junction.java",
+      "fields": [
+        {
+          "n": "speed",
+          "t": "number"
+        },
+        {
+          "n": "capacity",
+          "t": "number"
+        },
+        {
+          "n": "displayedSpeed",
+          "t": "number"
+        }
+      ]
+    },
+    "MassDriver": {
+      "extends": "Block",
+      "ctype": "block",
+      "file": "C:/Users/XN325/Desktop/mindustry/Mindustry-160.5/core/src/mindustry/world/blocks/distribution/MassDriver.java",
+      "fields": [
+        {
+          "n": "range",
+          "t": "number"
+        },
+        {
+          "n": "rotateSpeed",
+          "t": "number"
+        },
+        {
+          "n": "translation",
+          "t": "number"
+        },
+        {
+          "n": "minDistribute",
+          "t": "number"
+        },
+        {
+          "n": "knockback",
+          "t": "number"
+        },
+        {
+          "n": "reload",
+          "t": "number"
+        },
+        {
+          "n": "bulletSpeed",
+          "t": "number"
+        },
+        {
+          "n": "bulletLifetime",
+          "t": "number"
+        },
+        {
+          "n": "shootEffect",
+          "t": "raw"
+        },
+        {
+          "n": "smokeEffect",
+          "t": "raw"
+        },
+        {
+          "n": "receiveEffect",
+          "t": "raw"
+        },
+        {
+          "n": "shootSound",
+          "t": "raw"
+        },
+        {
+          "n": "receiveSound",
+          "t": "raw"
+        },
+        {
+          "n": "shootSoundVolume",
+          "t": "number"
+        },
+        {
+          "n": "shake",
+          "t": "number"
+        },
+        {
+          "n": "to",
+          "t": "raw"
+        },
+        {
+          "n": "link",
+          "t": "number"
+        },
+        {
+          "n": "rotation",
+          "t": "number"
+        },
+        {
+          "n": "reloadCounter",
+          "t": "number"
+        },
+        {
+          "n": "state",
+          "t": "raw"
+        }
+      ]
+    },
+    "OverflowDuct": {
+      "extends": "Block",
+      "ctype": "block",
+      "file": "C:/Users/XN325/Desktop/mindustry/Mindustry-160.5/core/src/mindustry/world/blocks/distribution/OverflowDuct.java",
+      "fields": [
+        {
+          "n": "speed",
+          "t": "number"
+        },
+        {
+          "n": "invert",
+          "t": "bool"
+        },
+        {
+          "n": "progress",
+          "t": "number"
+        },
+        {
+          "n": "current",
+          "t": "content"
+        }
+      ]
+    },
+    "OverflowGate": {
+      "extends": "Block",
+      "ctype": "block",
+      "file": "C:/Users/XN325/Desktop/mindustry/Mindustry-160.5/core/src/mindustry/world/blocks/distribution/OverflowGate.java",
+      "fields": [
+        {
+          "n": "speed",
+          "t": "number"
+        },
+        {
+          "n": "invert",
+          "t": "bool"
+        }
+      ]
+    },
+    "Router": {
+      "extends": "Block",
+      "ctype": "block",
+      "file": "C:/Users/XN325/Desktop/mindustry/Mindustry-160.5/core/src/mindustry/world/blocks/distribution/Router.java",
+      "fields": [
+        {
+          "n": "speed",
+          "t": "number"
+        },
+        {
+          "n": "lastItem",
+          "t": "content"
+        },
+        {
+          "n": "lastInput",
+          "t": "raw"
+        },
+        {
+          "n": "time",
+          "t": "number"
+        },
+        {
+          "n": "unit",
+          "t": "raw"
+        }
+      ]
+    },
+    "Sorter": {
+      "extends": "Block",
+      "ctype": "block",
+      "file": "C:/Users/XN325/Desktop/mindustry/Mindustry-160.5/core/src/mindustry/world/blocks/distribution/Sorter.java",
+      "fields": [
+        {
+          "n": "invert",
+          "t": "bool"
+        },
+        {
+          "n": "sortItem",
+          "t": "content"
+        }
+      ]
+    },
+    "StackConveyor": {
+      "extends": "Block",
+      "ctype": "block",
+      "file": "C:/Users/XN325/Desktop/mindustry/Mindustry-160.5/core/src/mindustry/world/blocks/distribution/StackConveyor.java",
+      "fields": [
+        {
+          "n": "glowAlpha",
+          "t": "number"
+        },
+        {
+          "n": "glowColor",
+          "t": "color"
+        },
+        {
+          "n": "baseEfficiency",
+          "t": "number"
+        },
+        {
+          "n": "speed",
+          "t": "number"
+        },
+        {
+          "n": "outputRouter",
+          "t": "bool"
+        },
+        {
+          "n": "recharge",
+          "t": "number"
+        },
+        {
+          "n": "loadEffect",
+          "t": "raw"
+        },
+        {
+          "n": "unloadEffect",
+          "t": "raw"
+        },
+        {
+          "n": "blendprox",
+          "t": "raw"
+        },
+        {
+          "n": "link",
+          "t": "number"
+        },
+        {
+          "n": "cooldown",
+          "t": "number"
+        },
+        {
+          "n": "lastItem",
+          "t": "content"
+        }
+      ]
+    },
+    "StackRouter": {
+      "extends": "DuctRouter",
+      "ctype": "block",
+      "file": "C:/Users/XN325/Desktop/mindustry/Mindustry-160.5/core/src/mindustry/world/blocks/distribution/StackRouter.java",
+      "fields": [
+        {
+          "n": "baseEfficiency",
+          "t": "number"
+        },
+        {
+          "n": "glowAlpha",
+          "t": "number"
+        },
+        {
+          "n": "glowColor",
+          "t": "color"
+        },
+        {
+          "n": "unloading",
+          "t": "bool"
+        }
+      ]
+    },
+    "AirBlock": {
+      "extends": "Floor",
+      "ctype": "block",
+      "file": "C:/Users/XN325/Desktop/mindustry/Mindustry-160.5/core/src/mindustry/world/blocks/environment/AirBlock.java",
+      "fields": []
+    },
+    "CharacterOverlay": {
+      "extends": "OverlayFloor",
+      "ctype": "block",
+      "file": "C:/Users/XN325/Desktop/mindustry/Mindustry-160.5/core/src/mindustry/world/blocks/environment/CharacterOverlay.java",
+      "fields": [
+        {
+          "n": "color",
+          "t": "color"
+        }
+      ]
+    },
+    "Cliff": {
+      "extends": "Block",
+      "ctype": "block",
+      "file": "C:/Users/XN325/Desktop/mindustry/Mindustry-160.5/core/src/mindustry/world/blocks/environment/Cliff.java",
+      "fields": [
+        {
+          "n": "size",
+          "t": "number"
+        }
+      ]
+    },
+    "ColoredFloor": {
+      "extends": "Floor",
+      "ctype": "block",
+      "file": "C:/Users/XN325/Desktop/mindustry/Mindustry-160.5/core/src/mindustry/world/blocks/environment/ColoredFloor.java",
+      "fields": [
+        {
+          "n": "defaultColor",
+          "t": "color"
+        }
+      ]
+    },
+    "ColoredWall": {
+      "extends": "StaticWall",
+      "ctype": "block",
+      "file": "C:/Users/XN325/Desktop/mindustry/Mindustry-160.5/core/src/mindustry/world/blocks/environment/ColoredWall.java",
+      "fields": [
+        {
+          "n": "defaultColor",
+          "t": "color"
+        }
+      ]
+    },
+    "EmptyFloor": {
+      "extends": "Floor",
+      "ctype": "block",
+      "file": "C:/Users/XN325/Desktop/mindustry/Mindustry-160.5/core/src/mindustry/world/blocks/environment/EmptyFloor.java",
+      "fields": []
+    },
+    "Floor": {
+      "extends": "Block",
+      "ctype": "block",
+      "file": "C:/Users/XN325/Desktop/mindustry/Mindustry-160.5/core/src/mindustry/world/blocks/environment/Floor.java",
+      "fields": [
+        {
+          "n": "edge",
+          "t": "text"
+        },
+        {
+          "n": "speedMultiplier",
+          "t": "number"
+        },
+        {
+          "n": "dragMultiplier",
+          "t": "number"
+        },
+        {
+          "n": "damageTaken",
+          "t": "number"
+        },
+        {
+          "n": "drownTime",
+          "t": "number"
+        },
+        {
+          "n": "walkEffect",
+          "t": "raw"
+        },
+        {
+          "n": "walkSound",
+          "t": "raw"
+        },
+        {
+          "n": "walkSoundVolume",
+          "t": "number"
+        },
+        {
+          "n": "drownUpdateEffect",
+          "t": "raw"
+        },
+        {
+          "n": "status",
+          "t": "content"
+        },
+        {
+          "n": "statusDuration",
+          "t": "number"
+        },
+        {
+          "n": "liquidDrop",
+          "t": "content"
+        },
+        {
+          "n": "liquidMultiplier",
+          "t": "number"
+        },
+        {
+          "n": "isLiquid",
+          "t": "bool"
+        },
+        {
+          "n": "overlayAlpha",
+          "t": "number"
+        },
+        {
+          "n": "supportsOverlay",
+          "t": "bool"
+        },
+        {
+          "n": "supportsBeingOverlaid",
+          "t": "bool"
+        },
+        {
+          "n": "shallow",
+          "t": "bool"
+        },
+        {
+          "n": "blendGroup",
+          "t": "content"
+        },
+        {
+          "n": "oreDefault",
+          "t": "bool"
+        },
+        {
+          "n": "oreScale",
+          "t": "number"
+        },
+        {
+          "n": "wall",
+          "t": "content"
+        },
+        {
+          "n": "decoration",
+          "t": "content"
+        },
+        {
+          "n": "canShadow",
+          "t": "bool"
+        },
+        {
+          "n": "forceDrawLight",
+          "t": "bool"
+        },
+        {
+          "n": "needsSurface",
+          "t": "bool"
+        },
+        {
+          "n": "allowCorePlacement",
+          "t": "bool"
+        },
+        {
+          "n": "wallOre",
+          "t": "bool"
+        },
+        {
+          "n": "blendId",
+          "t": "number"
+        },
+        {
+          "n": "tilingVariants",
+          "t": "number"
+        },
+        {
+          "n": "autotile",
+          "t": "bool"
+        },
+        {
+          "n": "autotileMidVariants",
+          "t": "number"
+        },
+        {
+          "n": "autotileVariants",
+          "t": "number"
+        },
+        {
+          "n": "drawEdgeIn",
+          "t": "bool"
+        },
+        {
+          "n": "drawEdgeOut",
+          "t": "bool"
+        },
+        {
+          "n": "tile",
+          "t": "raw"
+        },
+        {
+          "n": "floor",
+          "t": "content"
+        },
+        {
+          "n": "data",
+          "t": "number"
+        }
+      ]
+    },
+    "OreBlock": {
+      "extends": "OverlayFloor",
+      "ctype": "block",
+      "file": "C:/Users/XN325/Desktop/mindustry/Mindustry-160.5/core/src/mindustry/world/blocks/environment/OreBlock.java",
+      "fields": []
+    },
+    "OverlayFloor": {
+      "extends": "Floor",
+      "ctype": "block",
+      "file": "C:/Users/XN325/Desktop/mindustry/Mindustry-160.5/core/src/mindustry/world/blocks/environment/OverlayFloor.java",
+      "fields": []
+    },
+    "Prop": {
+      "extends": "Block",
+      "ctype": "block",
+      "file": "C:/Users/XN325/Desktop/mindustry/Mindustry-160.5/core/src/mindustry/world/blocks/environment/Prop.java",
+      "fields": [
+        {
+          "n": "layer",
+          "t": "number"
+        }
+      ]
+    },
+    "RemoveOre": {
+      "extends": "OverlayFloor",
+      "ctype": "block",
+      "file": "C:/Users/XN325/Desktop/mindustry/Mindustry-160.5/core/src/mindustry/world/blocks/environment/RemoveOre.java",
+      "fields": []
+    },
+    "RemoveWall": {
+      "extends": "Block",
+      "ctype": "block",
+      "file": "C:/Users/XN325/Desktop/mindustry/Mindustry-160.5/core/src/mindustry/world/blocks/environment/RemoveWall.java",
+      "fields": []
+    },
+    "RuneOverlay": {
+      "extends": "OverlayFloor",
+      "ctype": "block",
+      "file": "C:/Users/XN325/Desktop/mindustry/Mindustry-160.5/core/src/mindustry/world/blocks/environment/RuneOverlay.java",
+      "fields": [
+        {
+          "n": "color",
+          "t": "color"
+        }
+      ]
+    },
+    "SeaBush": {
+      "extends": "Prop",
+      "ctype": "block",
+      "file": "C:/Users/XN325/Desktop/mindustry/Mindustry-160.5/core/src/mindustry/world/blocks/environment/SeaBush.java",
+      "fields": [
+        {
+          "n": "lobesMin",
+          "t": "number"
+        },
+        {
+          "n": "botAngle",
+          "t": "number"
+        },
+        {
+          "n": "sclMin",
+          "t": "number"
+        }
+      ]
+    },
+    "Seaweed": {
+      "extends": "Prop",
+      "ctype": "block",
+      "file": "C:/Users/XN325/Desktop/mindustry/Mindustry-160.5/core/src/mindustry/world/blocks/environment/Seaweed.java",
+      "fields": []
+    },
+    "ShallowLiquid": {
+      "extends": "Floor",
+      "ctype": "block",
+      "file": "C:/Users/XN325/Desktop/mindustry/Mindustry-160.5/core/src/mindustry/world/blocks/environment/ShallowLiquid.java",
+      "fields": [
+        {
+          "n": "floorBase",
+          "t": "raw"
+        },
+        {
+          "n": "liquidOpacity",
+          "t": "number"
+        }
+      ]
+    },
+    "SpawnBlock": {
+      "extends": "OverlayFloor",
+      "ctype": "block",
+      "file": "C:/Users/XN325/Desktop/mindustry/Mindustry-160.5/core/src/mindustry/world/blocks/environment/SpawnBlock.java",
+      "fields": []
+    },
+    "StaticProp": {
+      "extends": "Prop",
+      "ctype": "block",
+      "file": "C:/Users/XN325/Desktop/mindustry/Mindustry-160.5/core/src/mindustry/world/blocks/environment/StaticProp.java",
+      "fields": []
+    },
+    "StaticTree": {
+      "extends": "StaticWall",
+      "ctype": "block",
+      "file": "C:/Users/XN325/Desktop/mindustry/Mindustry-160.5/core/src/mindustry/world/blocks/environment/StaticTree.java",
+      "fields": []
+    },
+    "StaticWall": {
+      "extends": "Prop",
+      "ctype": "block",
+      "file": "C:/Users/XN325/Desktop/mindustry/Mindustry-160.5/core/src/mindustry/world/blocks/environment/StaticWall.java",
+      "fields": [
+        {
+          "n": "split",
+          "t": "raw"
+        },
+        {
+          "n": "autotile",
+          "t": "bool"
+        },
+        {
+          "n": "autotileMidVariants",
+          "t": "number"
+        }
+      ]
+    },
+    "SteamVent": {
+      "extends": "Floor",
+      "ctype": "block",
+      "file": "C:/Users/XN325/Desktop/mindustry/Mindustry-160.5/core/src/mindustry/world/blocks/environment/SteamVent.java",
+      "fields": [
+        {
+          "n": "parent",
+          "t": "content"
+        },
+        {
+          "n": "effect",
+          "t": "raw"
+        },
+        {
+          "n": "effectColor",
+          "t": "color"
+        },
+        {
+          "n": "effectSpacing",
+          "t": "number"
+        }
+      ]
+    },
+    "TallBlock": {
+      "extends": "Block",
+      "ctype": "block",
+      "file": "C:/Users/XN325/Desktop/mindustry/Mindustry-160.5/core/src/mindustry/world/blocks/environment/TallBlock.java",
+      "fields": [
+        {
+          "n": "shadowOffset",
+          "t": "number"
+        },
+        {
+          "n": "layer",
+          "t": "number"
+        },
+        {
+          "n": "shadowLayer",
+          "t": "number"
+        },
+        {
+          "n": "rotationRand",
+          "t": "number"
+        },
+        {
+          "n": "shadowAlpha",
+          "t": "number"
+        }
+      ]
+    },
+    "TiledFloor": {
+      "extends": "Floor",
+      "ctype": "block",
+      "file": "C:/Users/XN325/Desktop/mindustry/Mindustry-160.5/core/src/mindustry/world/blocks/environment/TiledFloor.java",
+      "fields": [
+        {
+          "n": "sizedRegions",
+          "t": "raw"
+        },
+        {
+          "n": "maxSize",
+          "t": "number"
+        }
+      ]
+    },
+    "TiledWall": {
+      "extends": "StaticWall",
+      "ctype": "block",
+      "file": "C:/Users/XN325/Desktop/mindustry/Mindustry-160.5/core/src/mindustry/world/blocks/environment/TiledWall.java",
+      "fields": [
+        {
+          "n": "sizedRegions",
+          "t": "raw"
+        },
+        {
+          "n": "maxSize",
+          "t": "number"
+        }
+      ]
+    },
+    "TreeBlock": {
+      "extends": "Block",
+      "ctype": "block",
+      "file": "C:/Users/XN325/Desktop/mindustry/Mindustry-160.5/core/src/mindustry/world/blocks/environment/TreeBlock.java",
+      "fields": [
+        {
+          "n": "shadowOffset",
+          "t": "number"
+        }
+      ]
+    },
+    "WobbleProp": {
+      "extends": "Prop",
+      "ctype": "block",
+      "file": "C:/Users/XN325/Desktop/mindustry/Mindustry-160.5/core/src/mindustry/world/blocks/environment/WobbleProp.java",
+      "fields": [
+        {
+          "n": "wscl",
+          "t": "number"
+        }
+      ]
+    },
+    "HeatConductor": {
+      "extends": "Block",
+      "ctype": "block",
+      "file": "C:/Users/XN325/Desktop/mindustry/Mindustry-160.5/core/src/mindustry/world/blocks/heat/HeatConductor.java",
+      "fields": [
+        {
+          "n": "visualMaxHeat",
+          "t": "number"
+        },
+        {
+          "n": "splitHeat",
+          "t": "bool"
+        },
+        {
+          "n": "heat",
+          "t": "number"
+        },
+        {
+          "n": "sideHeat",
+          "t": "raw"
+        },
+        {
+          "n": "lastHeatUpdate",
+          "t": "number"
+        }
+      ]
+    },
+    "HeatProducer": {
+      "extends": "GenericCrafter",
+      "ctype": "block",
+      "file": "C:/Users/XN325/Desktop/mindustry/Mindustry-160.5/core/src/mindustry/world/blocks/heat/HeatProducer.java",
+      "fields": [
+        {
+          "n": "heatOutput",
+          "t": "number"
+        },
+        {
+          "n": "warmupRate",
+          "t": "number"
+        },
+        {
+          "n": "heat",
+          "t": "number"
+        }
+      ]
+    },
+    "LegacyBlock": {
+      "extends": "Block",
+      "ctype": "block",
+      "file": "C:/Users/XN325/Desktop/mindustry/Mindustry-160.5/core/src/mindustry/world/blocks/legacy/LegacyBlock.java",
+      "fields": []
+    },
+    "LegacyCommandCenter": {
+      "extends": "LegacyBlock",
+      "ctype": "block",
+      "file": "C:/Users/XN325/Desktop/mindustry/Mindustry-160.5/core/src/mindustry/world/blocks/legacy/LegacyCommandCenter.java",
+      "fields": []
+    },
+    "LegacyMechPad": {
+      "extends": "LegacyBlock",
+      "ctype": "block",
+      "file": "C:/Users/XN325/Desktop/mindustry/Mindustry-160.5/core/src/mindustry/world/blocks/legacy/LegacyMechPad.java",
+      "fields": []
+    },
+    "LegacyUnitFactory": {
+      "extends": "LegacyBlock",
+      "ctype": "block",
+      "file": "C:/Users/XN325/Desktop/mindustry/Mindustry-160.5/core/src/mindustry/world/blocks/legacy/LegacyUnitFactory.java",
+      "fields": [
+        {
+          "n": "replacement",
+          "t": "content"
+        }
+      ]
+    },
+    "ArmoredConduit": {
+      "extends": "Conduit",
+      "ctype": "block",
+      "file": "C:/Users/XN325/Desktop/mindustry/Mindustry-160.5/core/src/mindustry/world/blocks/liquid/ArmoredConduit.java",
+      "fields": []
+    },
+    "Conduit": {
+      "extends": "LiquidBlock",
+      "ctype": "block",
+      "file": "C:/Users/XN325/Desktop/mindustry/Mindustry-160.5/core/src/mindustry/world/blocks/liquid/Conduit.java",
+      "fields": [
+        {
+          "n": "rotateRegions",
+          "t": "raw"
+        },
+        {
+          "n": "padCorners",
+          "t": "bool"
+        },
+        {
+          "n": "leaks",
+          "t": "bool"
+        },
+        {
+          "n": "rotBridgeReplacement",
+          "t": "raw"
+        },
+        {
+          "n": "smoothLiquid",
+          "t": "number"
+        },
+        {
+          "n": "xscl",
+          "t": "raw"
+        },
+        {
+          "n": "backCapped",
+          "t": "raw"
+        }
+      ]
+    },
+    "LiquidBlock": {
+      "extends": "Block",
+      "ctype": "block",
+      "file": "C:/Users/XN325/Desktop/mindustry/Mindustry-160.5/core/src/mindustry/world/blocks/liquid/LiquidBlock.java",
+      "fields": []
+    },
+    "LiquidBridge": {
+      "extends": "ItemBridge",
+      "ctype": "block",
+      "file": "C:/Users/XN325/Desktop/mindustry/Mindustry-160.5/core/src/mindustry/world/blocks/liquid/LiquidBridge.java",
+      "fields": []
+    },
+    "LiquidJunction": {
+      "extends": "LiquidBlock",
+      "ctype": "block",
+      "file": "C:/Users/XN325/Desktop/mindustry/Mindustry-160.5/core/src/mindustry/world/blocks/liquid/LiquidJunction.java",
+      "fields": []
+    },
+    "LiquidRouter": {
+      "extends": "LiquidBlock",
+      "ctype": "block",
+      "file": "C:/Users/XN325/Desktop/mindustry/Mindustry-160.5/core/src/mindustry/world/blocks/liquid/LiquidRouter.java",
+      "fields": [
+        {
+          "n": "liquidPadding",
+          "t": "number"
+        }
+      ]
+    },
+    "CanvasBlock": {
+      "extends": "Block",
+      "ctype": "block",
+      "file": "C:/Users/XN325/Desktop/mindustry/Mindustry-160.5/core/src/mindustry/world/blocks/logic/CanvasBlock.java",
+      "fields": [
+        {
+          "n": "padding",
+          "t": "number"
+        },
+        {
+          "n": "canvasSize",
+          "t": "number"
+        },
+        {
+          "n": "palette",
+          "t": "raw"
+        },
+        {
+          "n": "bitsPerPixel",
+          "t": "number"
+        },
+        {
+          "n": "texture",
+          "t": "raw"
+        },
+        {
+          "n": "blending",
+          "t": "number"
+        }
+      ]
+    },
+    "LogicBlock": {
+      "extends": "Block",
+      "ctype": "block",
+      "file": "C:/Users/XN325/Desktop/mindustry/Mindustry-160.5/core/src/mindustry/world/blocks/logic/LogicBlock.java",
+      "fields": [
+        {
+          "n": "maxInstructionScale",
+          "t": "number"
+        },
+        {
+          "n": "instructionsPerTick",
+          "t": "number"
+        },
+        {
+          "n": "maxInstructionsPerTick",
+          "t": "number"
+        },
+        {
+          "n": "range",
+          "t": "number"
+        },
+        {
+          "n": "valid",
+          "t": "bool"
+        },
+        {
+          "n": "y",
+          "t": "raw"
+        },
+        {
+          "n": "name",
+          "t": "text"
+        },
+        {
+          "n": "lastBuild",
+          "t": "raw"
+        },
+        {
+          "n": "logicVar",
+          "t": "raw"
+        },
+        {
+          "n": "code",
+          "t": "text"
+        },
+        {
+          "n": "accumulator",
+          "t": "number"
+        },
+        {
+          "n": "linkMap",
+          "t": "raw"
+        },
+        {
+          "n": "checkedDuplicates",
+          "t": "bool"
+        },
+        {
+          "n": "ipt",
+          "t": "number"
+        },
+        {
+          "n": "tag",
+          "t": "text"
+        },
+        {
+          "n": "iconTag",
+          "t": "raw"
+        },
+        {
+          "n": "linksVar",
+          "t": "raw"
+        },
+        {
+          "n": "loadBlock",
+          "t": "raw"
+        }
+      ]
+    },
+    "LogicDisplay": {
+      "extends": "Block",
+      "ctype": "block",
+      "file": "C:/Users/XN325/Desktop/mindustry/Mindustry-160.5/core/src/mindustry/world/blocks/logic/LogicDisplay.java",
+      "fields": [
+        {
+          "n": "maxSides",
+          "t": "number"
+        },
+        {
+          "n": "displaySize",
+          "t": "number"
+        },
+        {
+          "n": "scaleFactor",
+          "t": "number"
+        },
+        {
+          "n": "backgroundColor",
+          "t": "color"
+        },
+        {
+          "n": "rootDisplay",
+          "t": "raw"
+        },
+        {
+          "n": "buffer",
+          "t": "raw"
+        },
+        {
+          "n": "color",
+          "t": "number"
+        },
+        {
+          "n": "stroke",
+          "t": "number"
+        },
+        {
+          "n": "transform",
+          "t": "raw"
+        },
+        {
+          "n": "operations",
+          "t": "number"
+        },
+        {
+          "n": "index",
+          "t": "number"
+        },
+        {
+          "n": "processing",
+          "t": "bool"
+        },
+        {
+          "n": "type",
+          "t": "number"
+        },
+        {
+          "n": "p4",
+          "t": "raw"
+        }
+      ]
+    },
+    "MemoryBlock": {
+      "extends": "Block",
+      "ctype": "block",
+      "file": "C:/Users/XN325/Desktop/mindustry/Mindustry-160.5/core/src/mindustry/world/blocks/logic/MemoryBlock.java",
+      "fields": [
+        {
+          "n": "memoryCapacity",
+          "t": "number"
+        }
+      ]
+    },
+    "MessageBlock": {
+      "extends": "Block",
+      "ctype": "block",
+      "file": "C:/Users/XN325/Desktop/mindustry/Mindustry-160.5/core/src/mindustry/world/blocks/logic/MessageBlock.java",
+      "fields": [
+        {
+          "n": "maxTextLength",
+          "t": "number"
+        },
+        {
+          "n": "maxNewlines",
+          "t": "number"
+        }
+      ]
+    },
+    "SwitchBlock": {
+      "extends": "Block",
+      "ctype": "block",
+      "file": "C:/Users/XN325/Desktop/mindustry/Mindustry-160.5/core/src/mindustry/world/blocks/logic/SwitchBlock.java",
+      "fields": [
+        {
+          "n": "clickSound",
+          "t": "raw"
+        }
+      ]
+    },
+    "TileableLogicDisplay": {
+      "extends": "LogicDisplay",
+      "ctype": "block",
+      "file": "C:/Users/XN325/Desktop/mindustry/Mindustry-160.5/core/src/mindustry/world/blocks/logic/TileableLogicDisplay.java",
+      "fields": [
+        {
+          "n": "maxDisplayDimensions",
+          "t": "number"
+        },
+        {
+          "n": "frameSize",
+          "t": "number"
+        },
+        {
+          "n": "tilesWidth",
+          "t": "number"
+        },
+        {
+          "n": "prevBuffers",
+          "t": "raw"
+        },
+        {
+          "n": "bits",
+          "t": "number"
+        },
+        {
+          "n": "needsUpdate",
+          "t": "bool"
+        },
+        {
+          "n": "frameId",
+          "t": "number"
+        }
+      ]
+    },
+    "BlockProducer": {
+      "extends": "PayloadBlock",
+      "ctype": "block",
+      "file": "C:/Users/XN325/Desktop/mindustry/Mindustry-160.5/core/src/mindustry/world/blocks/payloads/BlockProducer.java",
+      "fields": [
+        {
+          "n": "buildSpeed",
+          "t": "number"
+        },
+        {
+          "n": "heat",
+          "t": "raw"
+        }
+      ]
+    },
+    "Constructor": {
+      "extends": "BlockProducer",
+      "ctype": "block",
+      "file": "C:/Users/XN325/Desktop/mindustry/Mindustry-160.5/core/src/mindustry/world/blocks/payloads/Constructor.java",
+      "fields": [
+        {
+          "n": "minBlockSize",
+          "t": "number"
+        },
+        {
+          "n": "recipe",
+          "t": "content"
+        }
+      ]
+    },
+    "PayloadBlock": {
+      "extends": "Block",
+      "ctype": "block",
+      "file": "C:/Users/XN325/Desktop/mindustry/Mindustry-160.5/core/src/mindustry/world/blocks/payloads/PayloadBlock.java",
+      "fields": [
+        {
+          "n": "payloadSpeed",
+          "t": "number"
+        },
+        {
+          "n": "regionSuffix",
+          "t": "text"
+        },
+        {
+          "n": "inRegion",
+          "t": "raw"
+        },
+        {
+          "n": "payload",
+          "t": "raw"
+        },
+        {
+          "n": "payRotation",
+          "t": "number"
+        },
+        {
+          "n": "carried",
+          "t": "bool"
+        }
+      ]
+    },
+    "PayloadConveyor": {
+      "extends": "Block",
+      "ctype": "block",
+      "file": "C:/Users/XN325/Desktop/mindustry/Mindustry-160.5/core/src/mindustry/world/blocks/payloads/PayloadConveyor.java",
+      "fields": [
+        {
+          "n": "moveTime",
+          "t": "number"
+        },
+        {
+          "n": "interp",
+          "t": "raw"
+        },
+        {
+          "n": "payloadLimit",
+          "t": "number"
+        },
+        {
+          "n": "pushUnits",
+          "t": "bool"
+        },
+        {
+          "n": "item",
+          "t": "raw"
+        },
+        {
+          "n": "animation",
+          "t": "raw"
+        },
+        {
+          "n": "lastInterp",
+          "t": "raw"
+        },
+        {
+          "n": "next",
+          "t": "raw"
+        },
+        {
+          "n": "blocked",
+          "t": "bool"
+        },
+        {
+          "n": "step",
+          "t": "number"
+        }
+      ]
+    },
+    "PayloadDeconstructor": {
+      "extends": "PayloadBlock",
+      "ctype": "block",
+      "file": "C:/Users/XN325/Desktop/mindustry/Mindustry-160.5/core/src/mindustry/world/blocks/payloads/PayloadDeconstructor.java",
+      "fields": [
+        {
+          "n": "maxPayloadSize",
+          "t": "number"
+        },
+        {
+          "n": "deconstructSpeed",
+          "t": "number"
+        },
+        {
+          "n": "dumpRate",
+          "t": "number"
+        },
+        {
+          "n": "itemBuffer",
+          "t": "number"
+        },
+        {
+          "n": "deconstructing",
+          "t": "raw"
+        },
+        {
+          "n": "accum",
+          "t": "raw"
+        },
+        {
+          "n": "progress",
+          "t": "number"
+        },
+        {
+          "n": "speedScl",
+          "t": "raw"
+        },
+        {
+          "n": "overlayTime",
+          "t": "number"
+        }
+      ]
+    },
+    "PayloadLoader": {
+      "extends": "PayloadBlock",
+      "ctype": "block",
+      "file": "C:/Users/XN325/Desktop/mindustry/Mindustry-160.5/core/src/mindustry/world/blocks/payloads/PayloadLoader.java",
+      "fields": [
+        {
+          "n": "loadTime",
+          "t": "number"
+        },
+        {
+          "n": "itemsLoaded",
+          "t": "number"
+        },
+        {
+          "n": "liquidsLoaded",
+          "t": "number"
+        },
+        {
+          "n": "maxBlockSize",
+          "t": "number"
+        },
+        {
+          "n": "maxPowerConsumption",
+          "t": "number"
+        },
+        {
+          "n": "loadPowerDynamic",
+          "t": "bool"
+        },
+        {
+          "n": "exporting",
+          "t": "bool"
+        }
+      ]
+    },
+    "PayloadMassDriver": {
+      "extends": "PayloadBlock",
+      "ctype": "block",
+      "file": "C:/Users/XN325/Desktop/mindustry/Mindustry-160.5/core/src/mindustry/world/blocks/payloads/PayloadMassDriver.java",
+      "fields": [
+        {
+          "n": "range",
+          "t": "number"
+        },
+        {
+          "n": "rotateSpeed",
+          "t": "number"
+        },
+        {
+          "n": "length",
+          "t": "number"
+        },
+        {
+          "n": "knockback",
+          "t": "number"
+        },
+        {
+          "n": "reload",
+          "t": "number"
+        },
+        {
+          "n": "chargeTime",
+          "t": "number"
+        },
+        {
+          "n": "maxPayloadSize",
+          "t": "number"
+        },
+        {
+          "n": "grabWidth",
+          "t": "number"
+        },
+        {
+          "n": "shootEffect",
+          "t": "raw"
+        },
+        {
+          "n": "smokeEffect",
+          "t": "raw"
+        },
+        {
+          "n": "receiveEffect",
+          "t": "raw"
+        },
+        {
+          "n": "shootSound",
+          "t": "raw"
+        },
+        {
+          "n": "receiveSound",
+          "t": "raw"
+        },
+        {
+          "n": "shootSoundVolume",
+          "t": "number"
+        },
+        {
+          "n": "shake",
+          "t": "number"
+        },
+        {
+          "n": "link",
+          "t": "number"
+        },
+        {
+          "n": "turretRotation",
+          "t": "number"
+        },
+        {
+          "n": "reloadCounter",
+          "t": "number"
+        },
+        {
+          "n": "targetSize",
+          "t": "number"
+        },
+        {
+          "n": "payLength",
+          "t": "number"
+        },
+        {
+          "n": "lastOther",
+          "t": "raw"
+        },
+        {
+          "n": "loaded",
+          "t": "bool"
+        },
+        {
+          "n": "charging",
+          "t": "bool"
+        },
+        {
+          "n": "state",
+          "t": "raw"
+        },
+        {
+          "n": "recPayload",
+          "t": "raw"
+        },
+        {
+          "n": "oy",
+          "t": "raw"
+        },
+        {
+          "n": "payload",
+          "t": "raw"
+        }
+      ]
+    },
+    "PayloadRouter": {
+      "extends": "PayloadConveyor",
+      "ctype": "block",
+      "file": "C:/Users/XN325/Desktop/mindustry/Mindustry-160.5/core/src/mindustry/world/blocks/payloads/PayloadRouter.java",
+      "fields": [
+        {
+          "n": "invert",
+          "t": "bool"
+        },
+        {
+          "n": "sorted",
+          "t": "raw"
+        },
+        {
+          "n": "recDir",
+          "t": "number"
+        },
+        {
+          "n": "matches",
+          "t": "bool"
+        },
+        {
+          "n": "smoothRot",
+          "t": "number"
+        },
+        {
+          "n": "controlTime",
+          "t": "number"
+        }
+      ]
+    },
+    "PayloadSource": {
+      "extends": "PayloadBlock",
+      "ctype": "block",
+      "file": "C:/Users/XN325/Desktop/mindustry/Mindustry-160.5/core/src/mindustry/world/blocks/payloads/PayloadSource.java",
+      "fields": [
+        {
+          "n": "unit",
+          "t": "content"
+        },
+        {
+          "n": "configBlock",
+          "t": "content"
+        },
+        {
+          "n": "commandPos",
+          "t": "raw"
+        },
+        {
+          "n": "scl",
+          "t": "number"
+        }
+      ]
+    },
+    "PayloadUnloader": {
+      "extends": "PayloadLoader",
+      "ctype": "block",
+      "file": "C:/Users/XN325/Desktop/mindustry/Mindustry-160.5/core/src/mindustry/world/blocks/payloads/PayloadUnloader.java",
+      "fields": [
+        {
+          "n": "offloadSpeed",
+          "t": "number"
+        },
+        {
+          "n": "maxPowerUnload",
+          "t": "number"
+        },
+        {
+          "n": "lastOutputPower",
+          "t": "number"
+        }
+      ]
+    },
+    "PayloadVoid": {
+      "extends": "PayloadBlock",
+      "ctype": "block",
+      "file": "C:/Users/XN325/Desktop/mindustry/Mindustry-160.5/core/src/mindustry/world/blocks/payloads/PayloadVoid.java",
+      "fields": [
+        {
+          "n": "incinerateEffect",
+          "t": "raw"
+        },
+        {
+          "n": "incinerateSound",
+          "t": "raw"
+        }
+      ]
+    },
+    "Battery": {
+      "extends": "PowerDistributor",
+      "ctype": "block",
+      "file": "C:/Users/XN325/Desktop/mindustry/Mindustry-160.5/core/src/mindustry/world/blocks/power/Battery.java",
+      "fields": [
+        {
+          "n": "drawer",
+          "t": "raw"
+        }
+      ]
+    },
+    "BeamNode": {
+      "extends": "PowerBlock",
+      "ctype": "block",
+      "file": "C:/Users/XN325/Desktop/mindustry/Mindustry-160.5/core/src/mindustry/world/blocks/power/BeamNode.java",
+      "fields": [
+        {
+          "n": "range",
+          "t": "number"
+        },
+        {
+          "n": "laserColor1",
+          "t": "color"
+        },
+        {
+          "n": "pulseScl",
+          "t": "number"
+        },
+        {
+          "n": "laserWidth",
+          "t": "number"
+        },
+        {
+          "n": "links",
+          "t": "raw"
+        },
+        {
+          "n": "dests",
+          "t": "raw"
+        },
+        {
+          "n": "lastChange",
+          "t": "number"
+        }
+      ]
+    },
+    "ConsumeGenerator": {
+      "extends": "PowerGenerator",
+      "ctype": "block",
+      "file": "C:/Users/XN325/Desktop/mindustry/Mindustry-160.5/core/src/mindustry/world/blocks/power/ConsumeGenerator.java",
+      "fields": [
+        {
+          "n": "itemDuration",
+          "t": "number"
+        },
+        {
+          "n": "warmupSpeed",
+          "t": "number"
+        },
+        {
+          "n": "effectChance",
+          "t": "number"
+        },
+        {
+          "n": "generateEffect",
+          "t": "raw"
+        },
+        {
+          "n": "generateEffectRange",
+          "t": "number"
+        },
+        {
+          "n": "baseLightRadius",
+          "t": "number"
+        },
+        {
+          "n": "outputLiquid",
+          "t": "raw"
+        },
+        {
+          "n": "explodeOnFull",
+          "t": "bool"
+        },
+        {
+          "n": "filterItem",
+          "t": "raw"
+        },
+        {
+          "n": "filterLiquid",
+          "t": "raw"
+        },
+        {
+          "n": "efficiencyMultiplier",
+          "t": "raw"
+        }
+      ]
+    },
+    "HeaterGenerator": {
+      "extends": "ConsumeGenerator",
+      "ctype": "block",
+      "file": "C:/Users/XN325/Desktop/mindustry/Mindustry-160.5/core/src/mindustry/world/blocks/power/HeaterGenerator.java",
+      "fields": [
+        {
+          "n": "heatOutput",
+          "t": "number"
+        },
+        {
+          "n": "warmupRate",
+          "t": "number"
+        },
+        {
+          "n": "heat",
+          "t": "number"
+        }
+      ]
+    },
+    "ImpactReactor": {
+      "extends": "PowerGenerator",
+      "ctype": "block",
+      "file": "C:/Users/XN325/Desktop/mindustry/Mindustry-160.5/core/src/mindustry/world/blocks/power/ImpactReactor.java",
+      "fields": [
+        {
+          "n": "warmupSpeed",
+          "t": "number"
+        },
+        {
+          "n": "itemDuration",
+          "t": "number"
+        },
+        {
+          "n": "totalProgress",
+          "t": "raw"
+        }
+      ]
+    },
+    "LightBlock": {
+      "extends": "Block",
+      "ctype": "block",
+      "file": "C:/Users/XN325/Desktop/mindustry/Mindustry-160.5/core/src/mindustry/world/blocks/power/LightBlock.java",
+      "fields": [
+        {
+          "n": "brightness",
+          "t": "number"
+        },
+        {
+          "n": "radius",
+          "t": "number"
+        },
+        {
+          "n": "smoothTime",
+          "t": "number"
+        }
+      ]
+    },
+    "LongPowerNode": {
+      "extends": "PowerNode",
+      "ctype": "block",
+      "file": "C:/Users/XN325/Desktop/mindustry/Mindustry-160.5/core/src/mindustry/world/blocks/power/LongPowerNode.java",
+      "fields": [
+        {
+          "n": "glowScl",
+          "t": "number"
+        },
+        {
+          "n": "warmup",
+          "t": "number"
+        }
+      ]
+    },
+    "NuclearReactor": {
+      "extends": "PowerGenerator",
+      "ctype": "block",
+      "file": "C:/Users/XN325/Desktop/mindustry/Mindustry-160.5/core/src/mindustry/world/blocks/power/NuclearReactor.java",
+      "fields": [
+        {
+          "n": "itemDuration",
+          "t": "number"
+        },
+        {
+          "n": "heating",
+          "t": "number"
+        },
+        {
+          "n": "heatOutput",
+          "t": "number"
+        },
+        {
+          "n": "heatWarmupRate",
+          "t": "number"
+        },
+        {
+          "n": "heatConsumeRate",
+          "t": "number"
+        },
+        {
+          "n": "ambientCooldownTime",
+          "t": "number"
+        },
+        {
+          "n": "smokeThreshold",
+          "t": "number"
+        },
+        {
+          "n": "flashThreshold",
+          "t": "number"
+        },
+        {
+          "n": "coolantPower",
+          "t": "number"
+        },
+        {
+          "n": "fuelItem",
+          "t": "content"
+        },
+        {
+          "n": "heat",
+          "t": "number"
+        },
+        {
+          "n": "heatLastFrame",
+          "t": "number"
+        },
+        {
+          "n": "heatProgress",
+          "t": "number"
+        },
+        {
+          "n": "flash",
+          "t": "number"
+        },
+        {
+          "n": "smoothLight",
+          "t": "number"
+        }
+      ]
+    },
+    "PowerBlock": {
+      "extends": "Block",
+      "ctype": "block",
+      "file": "C:/Users/XN325/Desktop/mindustry/Mindustry-160.5/core/src/mindustry/world/blocks/power/PowerBlock.java",
+      "fields": []
+    },
+    "PowerDiode": {
+      "extends": "Block",
+      "ctype": "block",
+      "file": "C:/Users/XN325/Desktop/mindustry/Mindustry-160.5/core/src/mindustry/world/blocks/power/PowerDiode.java",
+      "fields": []
+    },
+    "PowerDistributor": {
+      "extends": "PowerBlock",
+      "ctype": "block",
+      "file": "C:/Users/XN325/Desktop/mindustry/Mindustry-160.5/core/src/mindustry/world/blocks/power/PowerDistributor.java",
+      "fields": []
+    },
+    "PowerGenerator": {
+      "extends": "PowerDistributor",
+      "ctype": "block",
+      "file": "C:/Users/XN325/Desktop/mindustry/Mindustry-160.5/core/src/mindustry/world/blocks/power/PowerGenerator.java",
+      "fields": [
+        {
+          "n": "powerProduction",
+          "t": "number"
+        },
+        {
+          "n": "generationType",
+          "t": "raw"
+        },
+        {
+          "n": "explosionRadius",
+          "t": "number"
+        },
+        {
+          "n": "explosionDamage",
+          "t": "number"
+        },
+        {
+          "n": "explodeEffect",
+          "t": "raw"
+        },
+        {
+          "n": "explodeSound",
+          "t": "raw"
+        },
+        {
+          "n": "explosionPuddles",
+          "t": "number"
+        },
+        {
+          "n": "explosionPuddleRange",
+          "t": "number"
+        },
+        {
+          "n": "explosionPuddleAmount",
+          "t": "number"
+        },
+        {
+          "n": "explosionPuddleLiquid",
+          "t": "content"
+        },
+        {
+          "n": "explosionMinWarmup",
+          "t": "number"
+        },
+        {
+          "n": "explosionShake",
+          "t": "number"
+        },
+        {
+          "n": "explosionBreaksProps",
+          "t": "bool"
+        },
+        {
+          "n": "explosionScorchSize",
+          "t": "number"
+        },
+        {
+          "n": "explosionIgnitionChance",
+          "t": "number"
+        },
+        {
+          "n": "explosionScaleIgnitionChance",
+          "t": "bool"
+        },
+        {
+          "n": "explosionSpeed",
+          "t": "number"
+        },
+        {
+          "n": "explosionFireballs",
+          "t": "number"
+        },
+        {
+          "n": "generateTime",
+          "t": "number"
+        },
+        {
+          "n": "productionEfficiency",
+          "t": "number"
+        }
+      ]
+    },
+    "PowerNode": {
+      "extends": "PowerBlock",
+      "ctype": "block",
+      "file": "C:/Users/XN325/Desktop/mindustry/Mindustry-160.5/core/src/mindustry/world/blocks/power/PowerNode.java",
+      "fields": [
+        {
+          "n": "laserRange",
+          "t": "number"
+        },
+        {
+          "n": "maxNodes",
+          "t": "number"
+        },
+        {
+          "n": "autolink",
+          "t": "bool"
+        },
+        {
+          "n": "laserScale",
+          "t": "number"
+        },
+        {
+          "n": "useLod",
+          "t": "bool"
+        },
+        {
+          "n": "powerLayer",
+          "t": "number"
+        },
+        {
+          "n": "laserColor1",
+          "t": "color"
+        },
+        {
+          "n": "laserColor2",
+          "t": "color"
+        }
+      ]
+    },
+    "SolarGenerator": {
+      "extends": "PowerGenerator",
+      "ctype": "block",
+      "file": "C:/Users/XN325/Desktop/mindustry/Mindustry-160.5/core/src/mindustry/world/blocks/power/SolarGenerator.java",
+      "fields": []
+    },
+    "ThermalGenerator": {
+      "extends": "PowerGenerator",
+      "ctype": "block",
+      "file": "C:/Users/XN325/Desktop/mindustry/Mindustry-160.5/core/src/mindustry/world/blocks/power/ThermalGenerator.java",
+      "fields": [
+        {
+          "n": "generateEffect",
+          "t": "raw"
+        },
+        {
+          "n": "effectChance",
+          "t": "number"
+        },
+        {
+          "n": "minEfficiency",
+          "t": "number"
+        },
+        {
+          "n": "displayEfficiencyScale",
+          "t": "number"
+        },
+        {
+          "n": "displayEfficiency",
+          "t": "bool"
+        },
+        {
+          "n": "outputLiquid",
+          "t": "raw"
+        },
+        {
+          "n": "attribute",
+          "t": "raw"
+        },
+        {
+          "n": "sum",
+          "t": "number"
+        }
+      ]
+    },
+    "VariableReactor": {
+      "extends": "PowerGenerator",
+      "ctype": "block",
+      "file": "C:/Users/XN325/Desktop/mindustry/Mindustry-160.5/core/src/mindustry/world/blocks/power/VariableReactor.java",
+      "fields": [
+        {
+          "n": "maxHeat",
+          "t": "number"
+        },
+        {
+          "n": "unstableSpeed",
+          "t": "number"
+        },
+        {
+          "n": "warmupSpeed",
+          "t": "number"
+        },
+        {
+          "n": "effect",
+          "t": "raw"
+        },
+        {
+          "n": "effectChance",
+          "t": "number"
+        },
+        {
+          "n": "flashThreshold",
+          "t": "number"
+        },
+        {
+          "n": "sideHeat",
+          "t": "raw"
+        },
+        {
+          "n": "heat",
+          "t": "number"
+        }
+      ]
+    },
+    "AttributeCrafter": {
+      "extends": "GenericCrafter",
+      "ctype": "block",
+      "file": "C:/Users/XN325/Desktop/mindustry/Mindustry-160.5/core/src/mindustry/world/blocks/production/AttributeCrafter.java",
+      "fields": [
+        {
+          "n": "attribute",
+          "t": "raw"
+        },
+        {
+          "n": "baseEfficiency",
+          "t": "number"
+        },
+        {
+          "n": "maxBoost",
+          "t": "number"
+        },
+        {
+          "n": "minEfficiency",
+          "t": "number"
+        },
+        {
+          "n": "displayEfficiency",
+          "t": "bool"
+        },
+        {
+          "n": "scaleLiquidConsumption",
+          "t": "bool"
+        },
+        {
+          "n": "outputScale",
+          "t": "number"
+        },
+        {
+          "n": "boostScale",
+          "t": "number"
+        },
+        {
+          "n": "attrsum",
+          "t": "number"
+        }
+      ]
+    },
+    "BeamDrill": {
+      "extends": "Block",
+      "ctype": "block",
+      "file": "C:/Users/XN325/Desktop/mindustry/Mindustry-160.5/core/src/mindustry/world/blocks/production/BeamDrill.java",
+      "fields": [
+        {
+          "n": "drillTime",
+          "t": "number"
+        },
+        {
+          "n": "range",
+          "t": "number"
+        },
+        {
+          "n": "tier",
+          "t": "number"
+        },
+        {
+          "n": "laserWidth",
+          "t": "number"
+        },
+        {
+          "n": "optionalBoostIntensity",
+          "t": "number"
+        },
+        {
+          "n": "blockedItem",
+          "t": "content"
+        },
+        {
+          "n": "blockedItems",
+          "t": "raw"
+        },
+        {
+          "n": "glowIntensity",
+          "t": "number"
+        },
+        {
+          "n": "glowScl",
+          "t": "number"
+        },
+        {
+          "n": "sparks",
+          "t": "number"
+        },
+        {
+          "n": "sparkRange",
+          "t": "number"
+        },
+        {
+          "n": "heatPulse",
+          "t": "number"
+        },
+        {
+          "n": "facing",
+          "t": "raw"
+        },
+        {
+          "n": "lasers",
+          "t": "raw"
+        },
+        {
+          "n": "lastItem",
+          "t": "content"
+        },
+        {
+          "n": "time",
+          "t": "number"
+        },
+        {
+          "n": "boostWarmup",
+          "t": "raw"
+        },
+        {
+          "n": "lastDrillSpeed",
+          "t": "number"
+        },
+        {
+          "n": "facingAmount",
+          "t": "number"
+        }
+      ]
+    },
+    "BurstDrill": {
+      "extends": "Drill",
+      "ctype": "block",
+      "file": "C:/Users/XN325/Desktop/mindustry/Mindustry-160.5/core/src/mindustry/world/blocks/production/BurstDrill.java",
+      "fields": [
+        {
+          "n": "shake",
+          "t": "number"
+        },
+        {
+          "n": "speedCurve",
+          "t": "raw"
+        },
+        {
+          "n": "invertedTime",
+          "t": "number"
+        },
+        {
+          "n": "arrowSpacing",
+          "t": "number"
+        },
+        {
+          "n": "arrows",
+          "t": "number"
+        },
+        {
+          "n": "drillSound",
+          "t": "raw"
+        },
+        {
+          "n": "drillSoundVolume",
+          "t": "number"
+        },
+        {
+          "n": "smoothProgress",
+          "t": "number"
+        },
+        {
+          "n": "invertTime",
+          "t": "number"
+        }
+      ]
+    },
+    "Drill": {
+      "extends": "Block",
+      "ctype": "block",
+      "file": "C:/Users/XN325/Desktop/mindustry/Mindustry-160.5/core/src/mindustry/world/blocks/production/Drill.java",
+      "fields": [
+        {
+          "n": "hardnessDrillMultiplier",
+          "t": "number"
+        },
+        {
+          "n": "tier",
+          "t": "number"
+        },
+        {
+          "n": "drillTime",
+          "t": "number"
+        },
+        {
+          "n": "liquidBoostIntensity",
+          "t": "number"
+        },
+        {
+          "n": "warmupSpeed",
+          "t": "number"
+        },
+        {
+          "n": "blockedItem",
+          "t": "content"
+        },
+        {
+          "n": "blockedItems",
+          "t": "raw"
+        },
+        {
+          "n": "drawMineItem",
+          "t": "bool"
+        },
+        {
+          "n": "drillEffect",
+          "t": "raw"
+        },
+        {
+          "n": "drillEffectRnd",
+          "t": "number"
+        },
+        {
+          "n": "drillEffectChance",
+          "t": "number"
+        },
+        {
+          "n": "rotateSpeed",
+          "t": "number"
+        },
+        {
+          "n": "updateEffect",
+          "t": "raw"
+        },
+        {
+          "n": "updateEffectChance",
+          "t": "number"
+        },
+        {
+          "n": "drawRim",
+          "t": "bool"
+        },
+        {
+          "n": "drawSpinSprite",
+          "t": "bool"
+        },
+        {
+          "n": "progress",
+          "t": "number"
+        },
+        {
+          "n": "warmup",
+          "t": "number"
+        },
+        {
+          "n": "timeDrilled",
+          "t": "number"
+        },
+        {
+          "n": "lastDrillSpeed",
+          "t": "number"
+        },
+        {
+          "n": "dominantItems",
+          "t": "number"
+        },
+        {
+          "n": "dominantItem",
+          "t": "content"
+        }
+      ]
+    },
+    "Fracker": {
+      "extends": "SolidPump",
+      "ctype": "block",
+      "file": "C:/Users/XN325/Desktop/mindustry/Mindustry-160.5/core/src/mindustry/world/blocks/production/Fracker.java",
+      "fields": [
+        {
+          "n": "itemUseTime",
+          "t": "number"
+        },
+        {
+          "n": "accumulator",
+          "t": "number"
+        }
+      ]
+    },
+    "GenericCrafter": {
+      "extends": "Block",
+      "ctype": "block",
+      "file": "C:/Users/XN325/Desktop/mindustry/Mindustry-160.5/core/src/mindustry/world/blocks/production/GenericCrafter.java",
+      "fields": [
+        {
+          "n": "outputItem",
+          "t": "raw"
+        },
+        {
+          "n": "outputItems",
+          "t": "stack[]:item"
+        },
+        {
+          "n": "outputLiquid",
+          "t": "raw"
+        },
+        {
+          "n": "outputLiquids",
+          "t": "stack[]:liquid"
+        },
+        {
+          "n": "liquidOutputDirections",
+          "t": "raw"
+        },
+        {
+          "n": "dumpExtraLiquid",
+          "t": "bool"
+        },
+        {
+          "n": "ignoreLiquidFullness",
+          "t": "bool"
+        },
+        {
+          "n": "craftTime",
+          "t": "number"
+        },
+        {
+          "n": "craftEffect",
+          "t": "raw"
+        },
+        {
+          "n": "updateEffect",
+          "t": "raw"
+        },
+        {
+          "n": "updateEffectChance",
+          "t": "number"
+        },
+        {
+          "n": "updateEffectSpread",
+          "t": "number"
+        },
+        {
+          "n": "warmupSpeed",
+          "t": "number"
+        },
+        {
+          "n": "legacyReadWarmup",
+          "t": "bool"
+        },
+        {
+          "n": "progress",
+          "t": "number"
+        },
+        {
+          "n": "totalProgress",
+          "t": "number"
+        },
+        {
+          "n": "warmup",
+          "t": "number"
+        },
+        {
+          "n": "outputAccumulator",
+          "t": "raw"
+        }
+      ]
+    },
+    "HeatCrafter": {
+      "extends": "GenericCrafter",
+      "ctype": "block",
+      "file": "C:/Users/XN325/Desktop/mindustry/Mindustry-160.5/core/src/mindustry/world/blocks/production/HeatCrafter.java",
+      "fields": [
+        {
+          "n": "heatRequirement",
+          "t": "number"
+        },
+        {
+          "n": "overheatScale",
+          "t": "number"
+        },
+        {
+          "n": "maxEfficiency",
+          "t": "number"
+        },
+        {
+          "n": "sideHeat",
+          "t": "raw"
+        },
+        {
+          "n": "heat",
+          "t": "number"
+        }
+      ]
+    },
+    "Incinerator": {
+      "extends": "Block",
+      "ctype": "block",
+      "file": "C:/Users/XN325/Desktop/mindustry/Mindustry-160.5/core/src/mindustry/world/blocks/production/Incinerator.java",
+      "fields": [
+        {
+          "n": "effect",
+          "t": "raw"
+        },
+        {
+          "n": "heat",
+          "t": "number"
+        }
+      ]
+    },
+    "ItemIncinerator": {
+      "extends": "Block",
+      "ctype": "block",
+      "file": "C:/Users/XN325/Desktop/mindustry/Mindustry-160.5/core/src/mindustry/world/blocks/production/ItemIncinerator.java",
+      "fields": [
+        {
+          "n": "effect",
+          "t": "raw"
+        },
+        {
+          "n": "effectChance",
+          "t": "number"
+        }
+      ]
+    },
+    "Pump": {
+      "extends": "LiquidBlock",
+      "ctype": "block",
+      "file": "C:/Users/XN325/Desktop/mindustry/Mindustry-160.5/core/src/mindustry/world/blocks/production/Pump.java",
+      "fields": [
+        {
+          "n": "pumpAmount",
+          "t": "number"
+        },
+        {
+          "n": "consumeTime",
+          "t": "number"
+        },
+        {
+          "n": "warmupSpeed",
+          "t": "number"
+        },
+        {
+          "n": "totalProgress",
+          "t": "raw"
+        },
+        {
+          "n": "consTimer",
+          "t": "number"
+        },
+        {
+          "n": "amount",
+          "t": "number"
+        },
+        {
+          "n": "liquidDrop",
+          "t": "content"
+        }
+      ]
+    },
+    "Separator": {
+      "extends": "Block",
+      "ctype": "block",
+      "file": "C:/Users/XN325/Desktop/mindustry/Mindustry-160.5/core/src/mindustry/world/blocks/production/Separator.java",
+      "fields": [
+        {
+          "n": "results",
+          "t": "stack[]:item"
+        },
+        {
+          "n": "craftTime",
+          "t": "number"
+        },
+        {
+          "n": "progress",
+          "t": "number"
+        },
+        {
+          "n": "totalProgress",
+          "t": "number"
+        },
+        {
+          "n": "warmup",
+          "t": "number"
+        },
+        {
+          "n": "seed",
+          "t": "number"
+        }
+      ]
+    },
+    "SingleBlockProducer": {
+      "extends": "BlockProducer",
+      "ctype": "block",
+      "file": "C:/Users/XN325/Desktop/mindustry/Mindustry-160.5/core/src/mindustry/world/blocks/production/SingleBlockProducer.java",
+      "fields": [
+        {
+          "n": "result",
+          "t": "content"
+        }
+      ]
+    },
+    "SolidPump": {
+      "extends": "Pump",
+      "ctype": "block",
+      "file": "C:/Users/XN325/Desktop/mindustry/Mindustry-160.5/core/src/mindustry/world/blocks/production/SolidPump.java",
+      "fields": [
+        {
+          "n": "result",
+          "t": "content"
+        },
+        {
+          "n": "updateEffect",
+          "t": "raw"
+        },
+        {
+          "n": "updateEffectChance",
+          "t": "number"
+        },
+        {
+          "n": "rotateSpeed",
+          "t": "number"
+        },
+        {
+          "n": "baseEfficiency",
+          "t": "number"
+        },
+        {
+          "n": "attribute",
+          "t": "raw"
+        },
+        {
+          "n": "warmup",
+          "t": "number"
+        },
+        {
+          "n": "pumpTime",
+          "t": "number"
+        },
+        {
+          "n": "boost",
+          "t": "number"
+        },
+        {
+          "n": "validTiles",
+          "t": "number"
+        },
+        {
+          "n": "lastPump",
+          "t": "number"
+        }
+      ]
+    },
+    "WallCrafter": {
+      "extends": "Block",
+      "ctype": "block",
+      "file": "C:/Users/XN325/Desktop/mindustry/Mindustry-160.5/core/src/mindustry/world/blocks/production/WallCrafter.java",
+      "fields": [
+        {
+          "n": "drillTime",
+          "t": "number"
+        },
+        {
+          "n": "liquidBoostIntensity",
+          "t": "number"
+        },
+        {
+          "n": "updateEffect",
+          "t": "raw"
+        },
+        {
+          "n": "updateEffectChance",
+          "t": "number"
+        },
+        {
+          "n": "rotateSpeed",
+          "t": "number"
+        },
+        {
+          "n": "attribute",
+          "t": "raw"
+        },
+        {
+          "n": "output",
+          "t": "content"
+        },
+        {
+          "n": "boostItemUseTime",
+          "t": "number"
+        },
+        {
+          "n": "itemBoostIntensity",
+          "t": "number"
+        },
+        {
+          "n": "itemConsumer",
+          "t": "raw"
+        },
+        {
+          "n": "hasLiquidBooster",
+          "t": "bool"
+        },
+        {
+          "n": "lastEfficiency",
+          "t": "raw"
+        }
+      ]
+    },
+    "ItemSource": {
+      "extends": "Block",
+      "ctype": "block",
+      "file": "C:/Users/XN325/Desktop/mindustry/Mindustry-160.5/core/src/mindustry/world/blocks/sandbox/ItemSource.java",
+      "fields": [
+        {
+          "n": "itemsPerSecond",
+          "t": "number"
+        },
+        {
+          "n": "counter",
+          "t": "number"
+        },
+        {
+          "n": "outputItem",
+          "t": "content"
+        }
+      ]
+    },
+    "ItemVoid": {
+      "extends": "Block",
+      "ctype": "block",
+      "file": "C:/Users/XN325/Desktop/mindustry/Mindustry-160.5/core/src/mindustry/world/blocks/sandbox/ItemVoid.java",
+      "fields": []
+    },
+    "LiquidSource": {
+      "extends": "Block",
+      "ctype": "block",
+      "file": "C:/Users/XN325/Desktop/mindustry/Mindustry-160.5/core/src/mindustry/world/blocks/sandbox/LiquidSource.java",
+      "fields": [
+        {
+          "n": "source",
+          "t": "content"
+        }
+      ]
+    },
+    "LiquidVoid": {
+      "extends": "Block",
+      "ctype": "block",
+      "file": "C:/Users/XN325/Desktop/mindustry/Mindustry-160.5/core/src/mindustry/world/blocks/sandbox/LiquidVoid.java",
+      "fields": []
+    },
+    "PowerSource": {
+      "extends": "PowerNode",
+      "ctype": "block",
+      "file": "C:/Users/XN325/Desktop/mindustry/Mindustry-160.5/core/src/mindustry/world/blocks/sandbox/PowerSource.java",
+      "fields": [
+        {
+          "n": "powerProduction",
+          "t": "number"
+        }
+      ]
+    },
+    "PowerVoid": {
+      "extends": "PowerBlock",
+      "ctype": "block",
+      "file": "C:/Users/XN325/Desktop/mindustry/Mindustry-160.5/core/src/mindustry/world/blocks/sandbox/PowerVoid.java",
+      "fields": []
+    },
+    "CoreBlock": {
+      "extends": "StorageBlock",
+      "ctype": "block",
+      "file": "C:/Users/XN325/Desktop/mindustry/Mindustry-160.5/core/src/mindustry/world/blocks/storage/CoreBlock.java",
+      "fields": [
+        {
+          "n": "thrusterLength",
+          "t": "number"
+        },
+        {
+          "n": "isFirstTier",
+          "t": "bool"
+        },
+        {
+          "n": "allowSpawn",
+          "t": "bool"
+        },
+        {
+          "n": "requiresCoreZone",
+          "t": "bool"
+        },
+        {
+          "n": "incinerateNonBuildable",
+          "t": "bool"
+        },
+        {
+          "n": "unitType",
+          "t": "content"
+        },
+        {
+          "n": "landDuration",
+          "t": "number"
+        },
+        {
+          "n": "landMusic",
+          "t": "raw"
+        },
+        {
+          "n": "launchSoundVolume",
+          "t": "number"
+        },
+        {
+          "n": "launchSound",
+          "t": "raw"
+        },
+        {
+          "n": "landSound",
+          "t": "raw"
+        },
+        {
+          "n": "launchEffect",
+          "t": "raw"
+        },
+        {
+          "n": "landZoomInterp",
+          "t": "raw"
+        },
+        {
+          "n": "landZoomFrom",
+          "t": "number"
+        },
+        {
+          "n": "captureInvicibility",
+          "t": "number"
+        },
+        {
+          "n": "storageCapacity",
+          "t": "number"
+        },
+        {
+          "n": "noEffect",
+          "t": "bool"
+        },
+        {
+          "n": "lastDamage",
+          "t": "raw"
+        },
+        {
+          "n": "iframes",
+          "t": "number"
+        },
+        {
+          "n": "thrusterTime",
+          "t": "number"
+        },
+        {
+          "n": "commandPos",
+          "t": "raw"
+        }
+      ]
+    },
+    "StorageBlock": {
+      "extends": "Block",
+      "ctype": "block",
+      "file": "C:/Users/XN325/Desktop/mindustry/Mindustry-160.5/core/src/mindustry/world/blocks/storage/StorageBlock.java",
+      "fields": [
+        {
+          "n": "coreMerge",
+          "t": "bool"
+        },
+        {
+          "n": "linkedCore",
+          "t": "raw"
+        }
+      ]
+    },
+    "Unloader": {
+      "extends": "Block",
+      "ctype": "block",
+      "file": "C:/Users/XN325/Desktop/mindustry/Mindustry-160.5/core/src/mindustry/world/blocks/storage/Unloader.java",
+      "fields": [
+        {
+          "n": "speed",
+          "t": "number"
+        },
+        {
+          "n": "allowCoreUnload",
+          "t": "bool"
+        },
+        {
+          "n": "unloadTimer",
+          "t": "number"
+        },
+        {
+          "n": "rotations",
+          "t": "number"
+        },
+        {
+          "n": "sortItem",
+          "t": "content"
+        },
+        {
+          "n": "dumpingTo",
+          "t": "raw"
+        }
+      ]
+    },
+    "Reconstructor": {
+      "extends": "UnitBlock",
+      "ctype": "block",
+      "file": "C:/Users/XN325/Desktop/mindustry/Mindustry-160.5/core/src/mindustry/world/blocks/units/Reconstructor.java",
+      "fields": [
+        {
+          "n": "constructTime",
+          "t": "number"
+        },
+        {
+          "n": "capacities",
+          "t": "raw"
+        },
+        {
+          "n": "createSound",
+          "t": "raw"
+        },
+        {
+          "n": "createSoundVolume",
+          "t": "number"
+        },
+        {
+          "n": "showAllCommands",
+          "t": "bool"
+        },
+        {
+          "n": "commandPos",
+          "t": "raw"
+        },
+        {
+          "n": "command",
+          "t": "content"
+        }
+      ]
+    },
+    "RepairTower": {
+      "extends": "Block",
+      "ctype": "block",
+      "file": "C:/Users/XN325/Desktop/mindustry/Mindustry-160.5/core/src/mindustry/world/blocks/units/RepairTower.java",
+      "fields": [
+        {
+          "n": "range",
+          "t": "number"
+        },
+        {
+          "n": "circleSpeed",
+          "t": "number"
+        },
+        {
+          "n": "healAmount",
+          "t": "number"
+        },
+        {
+          "n": "warmup",
+          "t": "number"
+        },
+        {
+          "n": "totalProgress",
+          "t": "number"
+        }
+      ]
+    },
+    "RepairTurret": {
+      "extends": "Block",
+      "ctype": "block",
+      "file": "C:/Users/XN325/Desktop/mindustry/Mindustry-160.5/core/src/mindustry/world/blocks/units/RepairTurret.java",
+      "fields": [
+        {
+          "n": "timerTarget",
+          "t": "number"
+        },
+        {
+          "n": "timerEffect",
+          "t": "number"
+        },
+        {
+          "n": "repairRadius",
+          "t": "number"
+        },
+        {
+          "n": "repairSpeed",
+          "t": "number"
+        },
+        {
+          "n": "powerUse",
+          "t": "number"
+        },
+        {
+          "n": "length",
+          "t": "number"
+        },
+        {
+          "n": "beamWidth",
+          "t": "number"
+        },
+        {
+          "n": "pulseRadius",
+          "t": "number"
+        },
+        {
+          "n": "pulseStroke",
+          "t": "number"
+        },
+        {
+          "n": "acceptCoolant",
+          "t": "bool"
+        },
+        {
+          "n": "coolantUse",
+          "t": "number"
+        },
+        {
+          "n": "coolEffect",
+          "t": "raw"
+        },
+        {
+          "n": "coolantMultiplier",
+          "t": "number"
+        },
+        {
+          "n": "target",
+          "t": "raw"
+        },
+        {
+          "n": "rotation",
+          "t": "raw"
+        }
+      ]
+    },
+    "UnitAssembler": {
+      "extends": "PayloadBlock",
+      "ctype": "block",
+      "file": "C:/Users/XN325/Desktop/mindustry/Mindustry-160.5/core/src/mindustry/world/blocks/units/UnitAssembler.java",
+      "fields": [
+        {
+          "n": "areaSize",
+          "t": "number"
+        },
+        {
+          "n": "droneType",
+          "t": "content"
+        },
+        {
+          "n": "dronesCreated",
+          "t": "number"
+        },
+        {
+          "n": "droneConstructTime",
+          "t": "number"
+        },
+        {
+          "n": "capacities",
+          "t": "raw"
+        },
+        {
+          "n": "createSound",
+          "t": "raw"
+        },
+        {
+          "n": "createSoundVolume",
+          "t": "number"
+        },
+        {
+          "n": "unit",
+          "t": "content"
+        },
+        {
+          "n": "time",
+          "t": "number"
+        },
+        {
+          "n": "target",
+          "t": "raw"
+        },
+        {
+          "n": "item",
+          "t": "raw"
+        },
+        {
+          "n": "commandPos",
+          "t": "raw"
+        },
+        {
+          "n": "sameTypeWarmup",
+          "t": "raw"
+        },
+        {
+          "n": "invalidWarmup",
+          "t": "number"
+        },
+        {
+          "n": "currentTier",
+          "t": "number"
+        },
+        {
+          "n": "lastTier",
+          "t": "number"
+        },
+        {
+          "n": "wasOccupied",
+          "t": "bool"
+        },
+        {
+          "n": "totalDroneProgress",
+          "t": "raw"
+        }
+      ]
+    },
+    "UnitAssemblerModule": {
+      "extends": "PayloadBlock",
+      "ctype": "block",
+      "file": "C:/Users/XN325/Desktop/mindustry/Mindustry-160.5/core/src/mindustry/world/blocks/units/UnitAssemblerModule.java",
+      "fields": [
+        {
+          "n": "tier",
+          "t": "number"
+        },
+        {
+          "n": "link",
+          "t": "raw"
+        },
+        {
+          "n": "lastChange",
+          "t": "number"
+        }
+      ]
+    },
+    "UnitBlock": {
+      "extends": "PayloadBlock",
+      "ctype": "block",
+      "file": "C:/Users/XN325/Desktop/mindustry/Mindustry-160.5/core/src/mindustry/world/blocks/units/UnitBlock.java",
+      "fields": [
+        {
+          "n": "speedScl",
+          "t": "raw"
+        }
+      ]
+    },
+    "UnitCargoLoader": {
+      "extends": "Block",
+      "ctype": "block",
+      "file": "C:/Users/XN325/Desktop/mindustry/Mindustry-160.5/core/src/mindustry/world/blocks/units/UnitCargoLoader.java",
+      "fields": [
+        {
+          "n": "unitType",
+          "t": "content"
+        },
+        {
+          "n": "unitBuildTime",
+          "t": "number"
+        },
+        {
+          "n": "polyStroke",
+          "t": "number"
+        },
+        {
+          "n": "polySides",
+          "t": "number"
+        },
+        {
+          "n": "polyRotateSpeed",
+          "t": "number"
+        },
+        {
+          "n": "polyColor",
+          "t": "color"
+        },
+        {
+          "n": "readUnitId",
+          "t": "number"
+        },
+        {
+          "n": "totalProgress",
+          "t": "raw"
+        },
+        {
+          "n": "readyness",
+          "t": "raw"
+        },
+        {
+          "n": "unit",
+          "t": "raw"
+        }
+      ]
+    },
+    "UnitCargoUnloadPoint": {
+      "extends": "Block",
+      "ctype": "block",
+      "file": "C:/Users/XN325/Desktop/mindustry/Mindustry-160.5/core/src/mindustry/world/blocks/units/UnitCargoUnloadPoint.java",
+      "fields": [
+        {
+          "n": "staleTimeDuration",
+          "t": "number"
+        },
+        {
+          "n": "item",
+          "t": "content"
+        },
+        {
+          "n": "staleTimer",
+          "t": "number"
+        },
+        {
+          "n": "stale",
+          "t": "bool"
+        }
+      ]
+    },
+    "UnitFactory": {
+      "extends": "UnitBlock",
+      "ctype": "block",
+      "file": "C:/Users/XN325/Desktop/mindustry/Mindustry-160.5/core/src/mindustry/world/blocks/units/UnitFactory.java",
+      "fields": [
+        {
+          "n": "capacities",
+          "t": "raw"
+        },
+        {
+          "n": "createSound",
+          "t": "raw"
+        },
+        {
+          "n": "createSoundVolume",
+          "t": "number"
+        },
+        {
+          "n": "unit",
+          "t": "content"
+        },
+        {
+          "n": "requirements",
+          "t": "stack[]:item"
+        },
+        {
+          "n": "time",
+          "t": "number"
+        },
+        {
+          "n": "commandPos",
+          "t": "raw"
+        },
+        {
+          "n": "command",
+          "t": "content"
+        },
+        {
+          "n": "currentPlan",
+          "t": "number"
+        }
+      ]
+    }
+  }
+}

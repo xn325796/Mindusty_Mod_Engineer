@@ -1,0 +1,294 @@
+{
+  "version": 1,
+  "note": "Curated field schemas. Any class not listed here falls back to schemas/fields.json (draft from source scan) + a raw key-value editor.",
+  "classes": {
+    "Item": {
+      "ctype": "item", "base": true, "extends": null,
+      "fields": {
+        "color": { "type": "color", "desc": "UI and map color" },
+        "hardness": { "type": "number", "default": 0, "desc": "Drill tier required to mine" },
+        "cost": { "type": "number", "default": 0.5, "desc": "Build cost multiplier" },
+        "explosiveness": { "type": "number", "default": 0 },
+        "flammability": { "type": "number", "default": 0 },
+        "radioactivity": { "type": "number", "default": 0 },
+        "charge": { "type": "number", "default": 0 },
+        "buildable": { "type": "bool", "default": true },
+        "hidden": { "type": "bool", "default": false }
+      }
+    },
+    "Liquid": {
+      "ctype": "liquid", "base": true, "extends": null,
+      "fields": {
+        "color": { "type": "color" },
+        "temperature": { "type": "number", "default": 0.5 },
+        "heatCapacity": { "type": "number", "default": 0.5 },
+        "viscosity": { "type": "number", "default": 0.5 },
+        "explosiveness": { "type": "number", "default": 0 },
+        "flammability": { "type": "number", "default": 0 },
+        "gas": { "type": "bool", "default": false },
+        "coolant": { "type": "bool", "default": true },
+        "boilPoint": { "type": "number", "default": 0.5 },
+        "effect": { "type": "content", "contentCtype": "status" }
+      }
+    },
+    "StatusEffect": {
+      "ctype": "status", "base": true, "extends": null,
+      "fields": {
+        "color": { "type": "color" },
+        "damage": { "type": "number", "default": 0, "desc": "Damage per tick, negative heals" },
+        "damageMultiplier": { "type": "number", "default": 1 },
+        "healthMultiplier": { "type": "number", "default": 1 },
+        "speedMultiplier": { "type": "number", "default": 1 },
+        "reloadMultiplier": { "type": "number", "default": 1 },
+        "buildSpeedMultiplier": { "type": "number", "default": 1 },
+        "permanent": { "type": "bool", "default": false },
+        "disarm": { "type": "bool", "default": false },
+        "reactive": { "type": "bool", "default": true },
+        "effect": { "type": "raw", "desc": "Effect, e.g. Fx.melting" },
+        "affinities": { "type": "raw" },
+        "opposites": { "type": "raw" }
+      }
+    },
+    "Block": {
+      "ctype": "block", "base": true, "extends": null,
+      "fields": {
+        "size": { "type": "number", "default": 1 },
+        "health": { "type": "number", "default": -1 },
+        "armor": { "type": "number", "default": 0 },
+        "requirements": { "type": "stack[]", "stackKind": "item", "desc": "Build costs, e.g. copper/5" },
+        "category": { "type": "enum", "enumValues": ["turret", "production", "distribution", "liquid", "power", "defense", "crafting", "units", "effect", "logic"] },
+        "research": { "type": "content", "contentCtype": "any", "desc": "Tech tree parent" },
+        "variants": { "type": "number", "default": 0 },
+        "solid": { "type": "bool" },
+        "update": { "type": "bool" },
+        "destructible": { "type": "bool" },
+        "floating": { "type": "bool", "default": false },
+        "insulated": { "type": "bool", "default": false },
+        "absorbLasers": { "type": "bool", "default": false },
+        "placeableLiquid": { "type": "bool", "default": false },
+        "hasPower": { "type": "bool" },
+        "hasItems": { "type": "bool" },
+        "hasLiquids": { "type": "bool" },
+        "itemCapacity": { "type": "number", "default": 10 },
+        "liquidCapacity": { "type": "number", "default": 10 },
+        "consumes": { "type": "raw", "desc": "Consumer object: items/power/coolant..." },
+        "buildVisibility": { "type": "enum", "enumValues": ["hidden", "shown", "debugOnly", "sandboxOnly", "campaignOnly", "campaignOnlyNoDestruct"] },
+        "env": { "type": "raw", "desc": "Env bitfield array, e.g. [terrestrial]" },
+        "breakable": { "type": "bool" },
+        "rebuildable": { "type": "bool", "default": true },
+        "unloadable": { "type": "bool", "default": true },
+        "canOverdrive": { "type": "bool", "default": false },
+        "targetable": { "type": "bool", "default": true }
+      }
+    },
+    "Wall": {
+      "ctype": "block", "extends": "Block",
+      "fields": {
+        "chanceDeflect": { "type": "number", "default": 10, "desc": "Deflect chance for bullets slower than deflectSpeed" },
+        "flashHit": { "type": "bool", "default": false },
+        "flashColor": { "type": "color" }
+      }
+    },
+    "Conveyor": {
+      "ctype": "block", "extends": "Block",
+      "fields": {
+        "speed": { "type": "number", "default": 0, "desc": "Items per frame factor" }
+      }
+    },
+    "ArmoredConveyor": { "ctype": "block", "extends": "Conveyor", "fields": {} },
+    "Junction": { "ctype": "block", "extends": "Block", "fields": {} },
+    "Router": { "ctype": "block", "extends": "Block", "fields": {} },
+    "Sorter": { "ctype": "block", "extends": "Block", "fields": { "invert": { "type": "bool", "default": false } } },
+    "OverflowGate": { "ctype": "block", "extends": "Block", "fields": { "invert": { "type": "bool", "default": false } } },
+    "Door": { "ctype": "block", "extends": "Block", "fields": {} },
+    "Conduit": {
+      "ctype": "block", "extends": "Block",
+      "fields": { "liquidCapacity": { "type": "number", "default": 10 } }
+    },
+    "LiquidRouter": { "ctype": "block", "extends": "Block", "fields": {} },
+    "Pump": {
+      "ctype": "block", "extends": "Block",
+      "fields": { "pumpAmount": { "type": "number", "default": 0.1 }, "reversePump": { "type": "bool", "default": false } }
+    },
+    "GenericCrafter": {
+      "ctype": "block", "extends": "Block",
+      "fields": {
+        "craftTime": { "type": "number", "default": 80 },
+        "outputItem": { "type": "stack", "stackKind": "item", "desc": "Single item output, e.g. copper/1" },
+        "outputItems": { "type": "stack[]", "stackKind": "item" },
+        "outputLiquid": { "type": "stack", "stackKind": "liquid" },
+        "craftEffect": { "type": "raw", "desc": "Effect, e.g. Fx.smeltsmoke" },
+        "updateEffect": { "type": "raw" }
+      }
+    },
+    "PowerNode": {
+      "ctype": "block", "extends": "Block",
+      "fields": {
+        "laserRange": { "type": "number", "default": 6 },
+        "maxNodes": { "type": "number", "default": 10 }
+      }
+    },
+    "Battery": { "ctype": "block", "extends": "Block", "fields": { "capacity": { "type": "number", "default": 4000 } } },
+    "ThermalGenerator": {
+      "ctype": "block", "extends": "Block",
+      "fields": { "powerProduction": { "type": "number", "default": 0 }, "effect": { "type": "raw" } }
+    },
+    "ItemTurret": {
+      "ctype": "block", "extends": "Block",
+      "fields": {
+        "range": { "type": "number", "default": 110 },
+        "reload": { "type": "number", "default": 10, "desc": "Shots per reload, in ticks" },
+        "inaccuracy": { "type": "number", "default": 0 },
+        "rotateSpeed": { "type": "number", "default": 5 },
+        "shootY": { "type": "number", "default": 4 },
+        "targetAir": { "type": "bool", "default": true },
+        "targetGround": { "type": "bool", "default": true },
+        "ammo": { "type": "raw", "desc": "Ammo map: { copper: {type: BasicBulletType, damage: 10} }" }
+      }
+    },
+    "LiquidTurret": { "ctype": "block", "extends": "Block", "fields": { "ammo": { "type": "raw" } } },
+    "PowerTurret": {
+      "ctype": "block", "extends": "Block",
+      "fields": { "shootType": { "type": "raw", "desc": "Bullet object with type, e.g. {type: Laser, damage: 10}" } }
+    },
+    "StorageBlock": { "ctype": "block", "extends": "Block", "fields": {} },
+    "Unloader": { "ctype": "block", "extends": "Block", "fields": { "speed": { "type": "number", "default": 1 } } },
+    "UnitFactory": {
+      "ctype": "block", "extends": "Block",
+      "fields": { "plans": { "type": "raw", "desc": "List of {unit, requirements, time}" } }
+    },
+    "Reconstructor": {
+      "ctype": "block", "extends": "Block",
+      "fields": {
+        "size": { "type": "number", "default": 4 },
+        "researchCost": { "type": "raw" },
+        "upgrades": { "type": "raw", "desc": "[[fromUnit, toUnit], ...]" }
+      }
+    },
+    "UnitType": {
+      "ctype": "unit", "base": true, "extends": null,
+      "fields": {
+        "speed": { "type": "number", "default": 1 },
+        "health": { "type": "number", "default": 100 },
+        "armor": { "type": "number", "default": 0 },
+        "hitSize": { "type": "number", "default": 6 },
+        "drag": { "type": "number", "default": 0.3 },
+        "accel": { "type": "number", "default": 0.6 },
+        "rotateSpeed": { "type": "number", "default": 5 },
+        "engineSize": { "type": "number", "default": 0 },
+        "engineOffset": { "type": "number", "default": 5 },
+        "itemCapacity": { "type": "number", "default": 0 },
+        "buildSpeed": { "type": "number", "default": 0, "desc": "0 = cannot build" },
+        "mineSpeed": { "type": "number", "default": 0 },
+        "mineTier": { "type": "number", "default": -1, "desc": "-1 = cannot mine" },
+        "targetPriority": { "type": "number", "default": -1 },
+        "research": { "type": "content", "contentCtype": "any" },
+        "requirements": { "type": "raw", "desc": "UnitReq: {block: GroundFactory, requirements: [copper/10], time: 100}" },
+        "weapons": { "type": "raw", "desc": "List of weapon objects: {x, y, bullet: {...}}" },
+        "abilities": { "type": "raw" },
+        "defaultController": { "type": "raw", "desc": "AI class, e.g. MinerAI" }
+      }
+    },
+    "MechUnitType": { "ctype": "unit", "extends": "UnitType", "fields": { "boostMultiplier": { "type": "number", "default": 1 } } },
+    "LegsUnitType": {
+      "ctype": "unit", "extends": "UnitType",
+      "fields": { "legLength": { "type": "number", "default": 10 }, "legSpeed": { "type": "number", "default": 1 } }
+    },
+    "TankUnitType": { "ctype": "unit", "extends": "UnitType", "fields": { "treadPullScale": { "type": "number", "default": 1 } } },
+    "NavalUnitType": { "ctype": "unit", "extends": "UnitType", "fields": {} },
+    "PayloadUnitType": { "ctype": "unit", "extends": "UnitType", "fields": {} },
+    "MissileUnitType": {
+      "ctype": "unit", "extends": "UnitType",
+      "fields": { "despawnEffect": { "type": "raw" }, "trailLength": { "type": "number", "default": 15 } }
+    },
+    "BulletType": {
+      "ctype": "bullet", "base": true, "extends": null,
+      "fields": {
+        "damage": { "type": "number", "default": 1 },
+        "speed": { "type": "number", "default": 5 },
+        "lifetime": { "type": "number", "default": 40 },
+        "width": { "type": "number", "default": 5 },
+        "height": { "type": "number", "default": 7 },
+        "splashDamage": { "type": "number", "default": 0 },
+        "splashDamageRadius": { "type": "number", "default": 0 },
+        "pierce": { "type": "bool", "default": false },
+        "pierceCap": { "type": "number", "default": -1 },
+        "absorbable": { "type": "bool", "default": false },
+        "hittable": { "type": "bool", "default": true },
+        "collides": { "type": "bool", "default": true },
+        "collidesAir": { "type": "bool", "default": true },
+        "collidesGround": { "type": "bool", "default": true },
+        "incendiary": { "type": "bool", "default": false },
+        "status": { "type": "content", "contentCtype": "status" },
+        "statusDuration": { "type": "number", "default": 240 },
+        "frontColor": { "type": "color", "default": "#ffffff" },
+        "backColor": { "type": "color", "default": "#83f7e1" },
+        "hitEffect": { "type": "raw" },
+        "despawnEffect": { "type": "raw" },
+        "smokeEffect": { "type": "raw" }
+      }
+    },
+    "LaserBulletType": { "ctype": "bullet", "extends": "BulletType", "fields": { "length": { "type": "number", "default": 200 } } },
+    "ContinuousLaserBulletType": { "ctype": "bullet", "extends": "BulletType", "fields": { "length": { "type": "number", "default": 200 } } },
+    "SapBulletType": { "ctype": "bullet", "extends": "BulletType", "fields": { "length": { "type": "number", "default": 100 } } },
+    "BasicBulletType": { "ctype": "bullet", "extends": "BulletType", "fields": {} },
+    "ArtilleryBulletType": { "ctype": "bullet", "extends": "BulletType", "fields": {} },
+    "FlakBulletType": { "ctype": "bullet", "extends": "BulletType", "fields": { "burstShots": { "type": "number", "default": 3 } } },
+    "LaserBoltBulletType": { "ctype": "bullet", "extends": "BulletType", "fields": { "length": { "type": "number", "default": 40 } } },
+    "Weather": {
+      "ctype": "weather", "base": true, "extends": null,
+      "fields": {
+        "duration": { "type": "number", "default": 1500 },
+        "opacity": { "type": "number", "default": 0.5 },
+        "attrs": { "type": "raw" }
+      }
+    },
+    "RainWeather": {
+      "ctype": "weather", "extends": "Weather",
+      "fields": { "xs": { "type": "raw" }, "ys": { "type": "raw" }, "noiseLayers": { "type": "number", "default": 2 } }
+    },
+    "ParticleWeather": {
+      "ctype": "weather", "extends": "Weather",
+      "fields": { "particleRegion": { "type": "sprite" }, "sizeMin": { "type": "number", "default": 1 }, "sizeMax": { "type": "number", "default": 3 }, "density": { "type": "number", "default": 2000 } }
+    },
+    "SectorPreset": {
+      "ctype": "sector", "base": true, "extends": null,
+      "fields": {
+        "sector": { "type": "number", "desc": "Sector index on the planet" },
+        "planet": { "type": "content", "contentCtype": "planet" },
+        "difficulty": { "type": "number", "default": 0 },
+        "captureWave": { "type": "number", "default": -1 },
+        "rules": { "type": "raw" }
+      }
+    },
+    "Planet": {
+      "ctype": "planet", "base": true, "extends": null,
+      "fields": {
+        "radius": { "type": "number", "default": 1 },
+        "minZoom": { "type": "number", "default": 0.25 },
+        "hasAtmosphere": { "type": "bool", "default": false },
+        "atmosphereColor": { "type": "color" },
+        "atmosphereRadIn": { "type": "number", "default": 0.1 },
+        "atmosphereRadOut": { "type": "number", "default": 0.1 },
+        "tidalLock": { "type": "bool", "default": false },
+        "parent": { "type": "content", "contentCtype": "planet" },
+        "startSector": { "type": "number", "default": 15 },
+        "generator": { "type": "raw", "desc": "PlanetGenerator object" },
+        "meshLoader": { "type": "raw" },
+        "accessible": { "type": "bool", "default": true }
+      }
+    },
+    "TeamEntry": {
+      "ctype": "team", "base": true, "extends": null,
+      "fields": { "color": { "type": "color" } }
+    },
+    "UnitCommand": {
+      "ctype": "unitCommand", "base": true, "extends": null,
+      "fields": { "switchKey": { "type": "text" } }
+    },
+    "UnitStance": {
+      "ctype": "unitStance", "base": true, "extends": null,
+      "fields": {}
+    }
+  }
+}
